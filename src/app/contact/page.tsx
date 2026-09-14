@@ -1,11 +1,30 @@
-import { MapPin, Phone, MessageCircle } from "lucide-react";
+"use client";
 
-export const metadata = {
-  title: "Contact Us | Safezone",
-  description: "We're here for you. Contact Safezone for any questions or support.",
-};
+import { useState } from "react";
+import { MapPin, Phone, MessageCircle, CheckCircle2 } from "lucide-react";
 
 export default function ContactPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate API call
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSuccess(true);
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => setIsSuccess(false), 5000);
+      
+      // Reset form
+      const form = e.target as HTMLFormElement;
+      form.reset();
+    }, 1500);
+  };
+
   return (
     <div className="flex flex-col w-full">
       {/* Hero */}
@@ -73,33 +92,45 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-white p-8 md:p-12 rounded-[32px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 h-fit">
+            <div className="bg-white p-8 md:p-12 rounded-[32px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 h-fit relative">
               <h3 className="text-3xl font-heading font-bold text-charcoal mb-8">Send a Message</h3>
-              <form className="space-y-6">
+              
+              {isSuccess && (
+                <div className="mb-6 p-4 bg-green-50 border border-green-200 text-green-700 rounded-xl flex items-center gap-3 animate-in fade-in slide-in-from-top-2">
+                  <CheckCircle2 className="w-5 h-5 shrink-0" />
+                  <p>Thank you for reaching out! We have received your message and will get back to you shortly.</p>
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label htmlFor="name" className="block text-sm font-medium text-charcoal">Name</label>
-                    <input type="text" id="name" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-sage focus:ring-1 focus:ring-sage outline-none transition-colors" placeholder="Your name" />
+                    <input type="text" id="name" required disabled={isSubmitting} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-sage focus:ring-1 focus:ring-sage outline-none transition-colors disabled:opacity-50" placeholder="Your name" />
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="phone" className="block text-sm font-medium text-charcoal">Phone</label>
-                    <input type="tel" id="phone" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-sage focus:ring-1 focus:ring-sage outline-none transition-colors" placeholder="Your phone number" />
+                    <input type="tel" id="phone" required disabled={isSubmitting} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-sage focus:ring-1 focus:ring-sage outline-none transition-colors disabled:opacity-50" placeholder="Your phone number" />
                   </div>
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="block text-sm font-medium text-charcoal">Email</label>
-                  <input type="email" id="email" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-sage focus:ring-1 focus:ring-sage outline-none transition-colors" placeholder="Your email address" />
+                  <input type="email" id="email" required disabled={isSubmitting} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-sage focus:ring-1 focus:ring-sage outline-none transition-colors disabled:opacity-50" placeholder="Your email address" />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="subject" className="block text-sm font-medium text-charcoal">Subject</label>
-                  <input type="text" id="subject" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-sage focus:ring-1 focus:ring-sage outline-none transition-colors" placeholder="What is this regarding?" />
+                  <input type="text" id="subject" required disabled={isSubmitting} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-sage focus:ring-1 focus:ring-sage outline-none transition-colors disabled:opacity-50" placeholder="What is this regarding?" />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="message" className="block text-sm font-medium text-charcoal">Message</label>
-                  <textarea id="message" rows={5} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-sage focus:ring-1 focus:ring-sage outline-none transition-colors resize-none" placeholder="How can we help you?"></textarea>
+                  <textarea id="message" required disabled={isSubmitting} rows={5} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-sage focus:ring-1 focus:ring-sage outline-none transition-colors resize-none disabled:opacity-50" placeholder="How can we help you?"></textarea>
                 </div>
-                <button type="button" className="w-full py-4 bg-charcoal text-white rounded-xl hover:bg-sage transition-colors font-medium text-lg">
-                  Send Message
+                <button type="submit" disabled={isSubmitting} className="w-full flex items-center justify-center py-4 bg-charcoal text-white rounded-xl hover:bg-sage transition-all font-medium text-lg disabled:opacity-70">
+                  {isSubmitting ? (
+                    <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  ) : (
+                    "Send Message"
+                  )}
                 </button>
               </form>
             </div>
