@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sage: #9CA894;
+  --color-sage-light: #DCE3D6;
+  --color-sage-dark: #6B7B61;
+  --color-ivory: #FDFBF7;
+  --color-ivory-dark: #F3EFE9;
+  --color-charcoal: #2A2A2A;
+  --color-charcoal-light: #4A4A4A;
+  --color-blush: #F9EBE6;
+
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-sora);
+}
+
+@layer base {
+  :root {
+    --background: #FDFBF7;
+    --foreground: #2A2A2A;
+  }
+  
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--foreground);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
