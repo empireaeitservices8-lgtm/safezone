@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -7,8 +8,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <Link href="/" className="font-heading font-bold text-2xl tracking-wide text-charcoal mb-4 block">
-              SAFEZONE
+            <Link href="/" className="mb-6 block">
+              <Image src="/logo.png" alt="Safezone" width={200} height={66} className="h-14 w-auto object-contain" />
             </Link>
             <p className="text-charcoal-light text-sm max-w-sm mb-8 leading-relaxed">
               Personal hygiene & wellness, thoughtfully designed. We focus on developing high-quality sanitary pads and wellness products designed around the real needs of women.

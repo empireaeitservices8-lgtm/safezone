@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, Search, User, Heart, ShoppingBag, X } from "lucide-react";
 import { useCartStore } from "@/store/cartStore";
 
@@ -55,8 +56,8 @@ export function Header() {
 
             {/* Logo */}
             <div className="flex-shrink-0 lg:w-1/4">
-              <Link href="/" className="font-heading font-bold text-2xl tracking-wide text-charcoal">
-                SAFEZONE
+              <Link href="/" className="flex items-center">
+                <Image src="/logo.png" alt="Safezone" width={180} height={60} className="h-12 w-auto object-contain" priority />
               </Link>
             </div>
 
@@ -109,8 +110,8 @@ export function Header() {
           {/* Panel */}
           <div className="fixed inset-y-0 left-0 w-4/5 max-w-sm bg-ivory shadow-xl overflow-y-auto pt-5 pb-6 flex flex-col">
             <div className="px-4 flex items-center justify-between mb-8">
-              <Link href="/" className="font-heading font-bold text-xl tracking-wide" onClick={() => setMobileMenuOpen(false)}>
-                SAFEZONE
+              <Link href="/" onClick={() => setMobileMenuOpen(false)}>
+                <Image src="/logo.png" alt="Safezone" width={150} height={50} className="h-10 w-auto object-contain" />
               </Link>
               <button
                 onClick={() => setMobileMenuOpen(false)}
