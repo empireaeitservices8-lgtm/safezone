@@ -55,9 +55,9 @@ export function Header() {
             </div>
 
             {/* Logo */}
-            <div className="flex-shrink-0 lg:w-1/4">
+            <div className="flex-shrink-0 flex items-center justify-center lg:justify-start lg:w-1/4">
               <Link href="/" className="flex items-center">
-                <Image src="/logo.png" alt="Safezone" width={180} height={60} className="h-12 w-auto object-contain" priority />
+                <Image src="/logo.png" alt="Safezone" width={180} height={60} className="object-contain max-h-[48px] w-auto" priority />
               </Link>
             </div>
 
@@ -111,7 +111,7 @@ export function Header() {
           <div className="fixed inset-y-0 left-0 w-4/5 max-w-sm bg-ivory shadow-xl overflow-y-auto pt-5 pb-6 flex flex-col">
             <div className="px-4 flex items-center justify-between mb-8">
               <Link href="/" onClick={() => setMobileMenuOpen(false)}>
-                <Image src="/logo.png" alt="Safezone" width={150} height={50} className="h-10 w-auto object-contain" />
+                <Image src="/logo.png" alt="Safezone" width={150} height={50} className="object-contain max-h-[40px] w-auto" />
               </Link>
               <button
                 onClick={() => setMobileMenuOpen(false)}
