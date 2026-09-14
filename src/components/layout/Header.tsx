@@ -42,9 +42,9 @@ export function Header() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between relative min-h-[48px]">
             {/* Mobile menu button */}
-            <div className="lg:hidden flex items-center">
+            <div className="lg:hidden flex items-center z-10">
               <button
                 onClick={() => setMobileMenuOpen(true)}
                 className="text-charcoal hover:text-sage transition-colors p-2 -ml-2"
@@ -55,9 +55,9 @@ export function Header() {
             </div>
 
             {/* Logo */}
-            <div className="flex-shrink-0 flex items-center justify-center lg:justify-start lg:w-1/4">
-              <Link href="/" className="flex items-center py-2">
-                <img src="/logo.png" alt="Safezone" className="h-16 md:h-[72px] w-auto object-contain" />
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:static lg:transform-none flex-shrink-0 lg:w-1/4 z-10">
+              <Link href="/" className="flex items-center justify-center">
+                <img src="/logo.png" alt="Safezone" className="h-14 md:h-16 w-auto object-contain" />
               </Link>
             </div>
 
