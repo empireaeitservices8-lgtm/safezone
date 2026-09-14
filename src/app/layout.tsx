@@ -33,7 +33,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${sora.variable} scroll-smooth`}>
       <body className="antialiased selection:bg-sage selection:text-white flex flex-col min-h-screen">
         <Header />
-        <main className="flex-grow pt-20">
+        <main className="flex-grow pt-[80px] md:pt-[100px]">
           {children}
         </main>
         <Footer />

@@ -38,13 +38,14 @@ export function Header() {
     <>
       <header
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-5"
+          isScrolled ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100" : "bg-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between relative min-h-[48px]">
-            {/* Mobile menu button */}
-            <div className="lg:hidden flex items-center z-10">
+          <div className="flex items-center justify-between w-full h-[80px] md:h-[100px]">
+            
+            {/* Mobile Left: Hamburger */}
+            <div className="flex-1 flex lg:hidden items-center justify-start">
               <button
                 onClick={() => setMobileMenuOpen(true)}
                 className="text-charcoal hover:text-sage transition-colors p-2 -ml-2"
@@ -54,28 +55,28 @@ export function Header() {
               </button>
             </div>
 
-            {/* Logo */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:static lg:transform-none flex-shrink-0 lg:w-1/4 z-10">
-              <Link href="/" className="flex items-center justify-center">
-                <img src="/logo.png" alt="Safezone" className="h-14 md:h-16 w-auto object-contain" />
+            {/* Logo: Centered on Mobile, Left on Desktop */}
+            <div className="flex lg:flex-1 items-center justify-center lg:justify-start h-full py-2">
+              <Link href="/" className="h-full flex items-center">
+                <img src="/logo.png" alt="Safezone" className="h-full w-auto object-contain max-h-[64px] md:max-h-[80px]" />
               </Link>
             </div>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex justify-center space-x-8">
+            {/* Desktop Navigation: Centered on Desktop, Hidden on Mobile */}
+            <nav className="hidden lg:flex flex-[2] justify-center space-x-8">
               {navLinks.slice(0, 5).map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="text-sm font-medium text-charcoal hover:text-sage transition-colors"
+                  className="text-sm font-bold text-charcoal hover:text-sage transition-colors"
                 >
                   {link.label}
                 </Link>
               ))}
             </nav>
 
-            {/* Right Icons */}
-            <div className="flex items-center justify-end space-x-4 lg:w-1/4">
+            {/* Right Icons: Right aligned on both */}
+            <div className="flex-1 flex items-center justify-end space-x-2 sm:space-x-4">
               <button className="text-charcoal hover:text-sage transition-colors p-2 hidden sm:block">
                 <Search className="h-5 w-5" />
               </button>
@@ -94,6 +95,7 @@ export function Header() {
                 )}
               </Link>
             </div>
+
           </div>
         </div>
       </header>
