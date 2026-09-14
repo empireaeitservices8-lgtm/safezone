@@ -56,8 +56,8 @@ export function Header() {
 
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center justify-center lg:justify-start lg:w-1/4">
-              <Link href="/" className="flex items-center">
-                <img src="/logo.png" alt="Safezone" className="h-10 md:h-12 w-auto object-contain" />
+              <Link href="/" className="flex items-center py-2">
+                <img src="/logo.png" alt="Safezone" className="h-16 md:h-[72px] w-auto object-contain" />
               </Link>
             </div>
 
@@ -111,7 +111,7 @@ export function Header() {
           <div className="fixed inset-y-0 left-0 w-4/5 max-w-sm bg-ivory shadow-xl overflow-y-auto pt-5 pb-6 flex flex-col">
             <div className="px-4 flex items-center justify-between mb-8">
               <Link href="/" onClick={() => setMobileMenuOpen(false)}>
-                <img src="/logo.png" alt="Safezone" className="h-8 md:h-10 w-auto object-contain" />
+                <img src="/logo.png" alt="Safezone" className="h-16 w-auto object-contain" />
               </Link>
               <button
                 onClick={() => setMobileMenuOpen(false)}

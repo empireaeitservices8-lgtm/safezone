@@ -9,7 +9,7 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link href="/" className="mb-6 block">
-              <img src="/logo.png" alt="Safezone" className="h-12 md:h-14 w-auto object-contain" />
+              <img src="/logo.png" alt="Safezone" className="h-24 md:h-32 w-auto object-contain" />
             </Link>
             <p className="text-charcoal-light text-sm max-w-sm mb-8 leading-relaxed">
               Personal hygiene & wellness, thoughtfully designed. We focus on developing high-quality sanitary pads and wellness products designed around the real needs of women.
