@@ -42,7 +42,7 @@ export function Header() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between w-full h-[80px] md:h-[100px]">
+          <div className="flex items-center justify-between w-full h-[100px] md:h-[130px]">
             
             {/* Mobile Left: Hamburger */}
             <div className="flex-1 flex lg:hidden items-center justify-start">
@@ -58,7 +58,7 @@ export function Header() {
             {/* Logo: Centered on Mobile, Left on Desktop */}
             <div className="flex lg:flex-1 items-center justify-center lg:justify-start h-full py-2">
               <Link href="/" className="h-full flex items-center">
-                <img src="/logo.png" alt="Safezone" className="h-full w-auto object-contain max-h-[64px] md:max-h-[80px]" />
+                <img src="/logo.png" alt="Safezone" className="h-full w-auto object-contain max-h-[84px] md:max-h-[110px]" />
               </Link>
             </div>
 
@@ -113,7 +113,7 @@ export function Header() {
           <div className="fixed inset-y-0 left-0 w-4/5 max-w-sm bg-ivory shadow-xl overflow-y-auto pt-5 pb-6 flex flex-col">
             <div className="px-4 flex items-center justify-between mb-8">
               <Link href="/" onClick={() => setMobileMenuOpen(false)}>
-                <img src="/logo.png" alt="Safezone" className="h-16 w-auto object-contain" />
+                <img src="/logo.png" alt="Safezone" className="h-20 w-auto object-contain" />
               </Link>
               <button
                 onClick={() => setMobileMenuOpen(false)}

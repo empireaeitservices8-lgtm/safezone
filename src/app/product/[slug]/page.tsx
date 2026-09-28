@@ -14,6 +14,9 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ slug:
   const [quantity, setQuantity] = useState(1);
   const [packSize, setPackSize] = useState("Pack of 10");
   const [added, setAdded] = useState(false);
+  
+  const productImages = ["/001.png", "/003.png"];
+  const [selectedImage, setSelectedImage] = useState(productImages[0]);
 
   // Generate a dummy product id based on slug, or default to 1
   const productId = slug || "1";
@@ -73,12 +76,16 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ slug:
             {/* Image Gallery */}
             <div className="space-y-4">
               <div className="relative aspect-square w-full rounded-[32px] bg-ivory flex items-center justify-center overflow-hidden border border-gray-100">
-                <Leaf className="w-32 h-32 text-sage/30" />
+                <Image src={selectedImage} alt={product.name} fill className="object-contain p-4" />
               </div>
               <div className="grid grid-cols-4 gap-4">
-                {[1, 2, 3, 4].map((img) => (
-                  <div key={img} className="relative aspect-square rounded-2xl bg-ivory cursor-pointer border-2 border-transparent hover:border-sage transition-colors flex items-center justify-center">
-                    <Leaf className="w-8 h-8 text-sage/20" />
+                {productImages.map((img, idx) => (
+                  <div 
+                    key={idx} 
+                    onClick={() => setSelectedImage(img)}
+                    className={`relative aspect-square rounded-2xl bg-ivory cursor-pointer border-2 transition-colors flex items-center justify-center overflow-hidden ${selectedImage === img ? 'border-sage' : 'border-transparent hover:border-sage/50'}`}
+                  >
+                    <Image src={img} alt={`Product thumbnail ${idx + 1}`} fill className="object-cover" />
                   </div>
                 ))}
               </div>

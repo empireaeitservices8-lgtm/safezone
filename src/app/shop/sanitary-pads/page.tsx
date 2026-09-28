@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Filter, ChevronDown, Heart, Leaf } from "lucide-react";
 
 export const metadata = {
@@ -42,9 +43,7 @@ export default function SanitaryPadsPage() {
             {[1, 2, 3, 4].map((item) => (
               <div key={item} className="group flex flex-col bg-white rounded-[24px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
                 <div className="relative aspect-[4/5] bg-gray-50 flex items-center justify-center overflow-hidden">
-                  <div className="w-full h-full bg-sage-light/20 flex items-center justify-center">
-                    <Leaf className="w-12 h-12 text-sage/40" />
-                  </div>
+                  <Image src={item % 2 === 0 ? "/003.png" : "/001.png"} alt="Product Image" fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute top-4 right-4">
                     <button className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-blush transition-colors">
                       <Heart className="w-5 h-5 text-charcoal" />
