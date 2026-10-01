@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Filter, ChevronDown, Heart, Leaf } from "lucide-react";
+import KeyFeaturesButton from "@/components/product/KeyFeaturesButton";
 
 export const metadata = {
   title: "Sanitary Pads | Safezone",
@@ -55,11 +56,11 @@ export default function SanitaryPadsPage() {
                   <Link href={`/product/pad-${item}`} className="text-base md:text-lg font-heading font-semibold text-charcoal hover:text-sage transition-colors line-clamp-2 mb-2">
                     Safezone Everyday Comfort Pad - Pack of 10
                   </Link>
-                  <div className="mt-auto flex items-center justify-between pt-4">
-                    <div className="flex items-center gap-2">
-                      <span className="text-base md:text-lg font-bold text-charcoal">₹120</span>
-                    </div>
+                  <div className="flex items-center gap-2 mb-1 pt-3">
+                    <span className="text-base md:text-lg font-bold text-charcoal">₹120</span>
+                    <span className="text-xs md:text-sm text-charcoal-light line-through">₹150</span>
                   </div>
+                  <KeyFeaturesButton />
                 </div>
               </div>
             ))}

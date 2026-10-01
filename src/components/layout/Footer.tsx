@@ -8,8 +8,16 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <Link href="/" className="mb-6 block">
-              <img src="/logo.png" alt="Safezone" className="h-24 md:h-32 w-auto object-contain" />
+            <Link href="/" className="mb-6 flex items-center gap-3.5">
+              <img src="/logo.png" alt="Safezone Healthcare" className="h-24 md:h-32 w-auto object-contain" />
+              <div className="flex flex-col justify-center">
+                <span className="font-heading font-bold text-xl md:text-2xl text-charcoal tracking-tight leading-tight">
+                  Safezone Healthcare
+                </span>
+                <span className="text-xs text-charcoal-light font-medium tracking-wide">
+                  ISO 9001:2026 Certified company
+                </span>
+              </div>
             </Link>
             <p className="text-charcoal-light text-sm max-w-sm mb-8 leading-relaxed">
               Personal hygiene & wellness, thoughtfully designed. We focus on developing high-quality sanitary pads and wellness products designed around the real needs of women.
@@ -66,6 +74,9 @@ export function Footer() {
           <div className="flex flex-col md:items-end justify-center space-y-2">
             <a href="tel:+919544114949" className="text-sm text-charcoal-light hover:text-sage transition-colors flex items-center">
               Mobile: +91 9544114949
+            </a>
+            <a href="tel:+919544114848" className="text-sm text-charcoal-light hover:text-sage transition-colors flex items-center">
+              Mobile: +91 95 44 11 48 48
             </a>
             <a href="https://wa.me/919544114949" target="_blank" rel="noopener noreferrer" className="text-sm text-charcoal-light hover:text-sage transition-colors flex items-center">
               WhatsApp: +91 9544114949

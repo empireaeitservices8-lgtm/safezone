@@ -4,7 +4,7 @@ import { use, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Heart, Star, ChevronRight, ShieldCheck, Leaf, Droplets, CheckCircle2 } from "lucide-react";
+import { Heart, Star, ChevronRight, ShieldCheck, Leaf, Droplets, CheckCircle2, ChevronDown, Sparkles } from "lucide-react";
 import { useCartStore } from "@/store/cartStore";
 
 export default function ProductDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -14,6 +14,7 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ slug:
   const [quantity, setQuantity] = useState(1);
   const [packSize, setPackSize] = useState("Pack of 10");
   const [added, setAdded] = useState(false);
+  const [showFeatures, setShowFeatures] = useState(false);
   
   const productImages = ["/001.png", "/003.png"];
   const [selectedImage, setSelectedImage] = useState(productImages[0]);
@@ -113,10 +114,95 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ slug:
                 <span className="text-sm text-charcoal-light underline cursor-pointer">{product.rating} ({product.reviews} reviews)</span>
               </div>
 
-              <div className="flex items-end gap-3 mb-8 transition-all duration-300">
+              {/* Price & MRP */}
+              <div className="flex items-end gap-3 mb-3 transition-all duration-300">
                 <span className="text-3xl font-bold text-charcoal">₹{product.price}</span>
                 <span className="text-lg text-charcoal-light line-through mb-1">₹{product.mrp}</span>
                 <span className="text-sm font-bold text-green-600 bg-green-50 px-2 py-1 rounded-md mb-1">{product.discount}</span>
+              </div>
+
+              {/* Small "Key Features" button below existing MRP */}
+              <div className="mb-6">
+                <button
+                  type="button"
+                  id="key-features-button"
+                  onClick={() => setShowFeatures(!showFeatures)}
+                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold text-sage-dark bg-sage/10 hover:bg-sage/20 border border-sage/30 transition-all shadow-sm group cursor-pointer"
+                  aria-expanded={showFeatures}
+                  aria-controls="key-features-list"
+                >
+                  <Sparkles className="w-3.5 h-3.5 text-sage group-hover:rotate-12 transition-transform" />
+                  <span>Key Features</span>
+                  <ChevronDown className={`w-3.5 h-3.5 text-sage transition-transform duration-200 ${showFeatures ? "rotate-180" : ""}`} />
+                </button>
+
+                {/* 12 Key Features - only displayed when clicked/opened */}
+                {showFeatures && (
+                  <div id="key-features-list" className="mt-3 p-4 sm:p-5 rounded-2xl bg-sage/5 border border-sage/20 transition-all duration-300 animate-fadeIn">
+                    <div className="flex items-center justify-between pb-3 mb-3 border-b border-sage/15">
+                      <h3 className="text-sm font-heading font-bold text-charcoal flex items-center gap-2">
+                        <span>Key Features</span>
+                      </h3>
+                      <button 
+                        type="button"
+                        onClick={() => setShowFeatures(false)}
+                        className="text-xs text-charcoal-light hover:text-charcoal px-2 py-0.5 rounded hover:bg-white/60 transition-colors cursor-pointer"
+                      >
+                        Close
+                      </button>
+                    </div>
+                    <div className="space-y-3.5 max-h-[380px] overflow-y-auto pr-2 custom-scrollbar">
+                      <div>
+                        <h4 className="font-heading font-semibold text-charcoal text-sm">1. Bamboo Fibre Fabric</h4>
+                        <p className="text-charcoal-light text-xs sm:text-sm mt-0.5 leading-relaxed">It absorbs moisture three to four times faster than normal cotton, keeping you dry and cool</p>
+                      </div>
+                      <div>
+                        <h4 className="font-heading font-semibold text-charcoal text-sm">2. High absorption</h4>
+                        <p className="text-charcoal-light text-xs sm:text-sm mt-0.5 leading-relaxed">The combination of bamboo fibre, cellulose / fluff pulp and SAPs provides fast absorption and high fluid-retention capacity</p>
+                      </div>
+                      <div>
+                        <h4 className="font-heading font-semibold text-charcoal text-sm">3. Dry Surface feel</h4>
+                        <p className="text-charcoal-light text-xs sm:text-sm mt-0.5 leading-relaxed">The ADL rapidly transfers menstrual fluid away from the cotton top sheet, helping the user feel drier</p>
+                      </div>
+                      <div>
+                        <h4 className="font-heading font-semibold text-charcoal text-sm">4. Breathable Comfort</h4>
+                        <p className="text-charcoal-light text-xs sm:text-sm mt-0.5 leading-relaxed">Bamboo / cotton materials and a breathable back sheet can improve airflow and reduce heat and moisture accumulation</p>
+                      </div>
+                      <div>
+                        <h4 className="font-heading font-semibold text-charcoal text-sm">5. Leak Protection SAP</h4>
+                        <p className="text-charcoal-light text-xs sm:text-sm mt-0.5 leading-relaxed">SAP, absorbent core construction, backsheet and four-wing design work together to reduce side and bottom leakage</p>
+                      </div>
+                      <div>
+                        <h4 className="font-heading font-semibold text-charcoal text-sm">6. Soft on Skin</h4>
+                        <p className="text-charcoal-light text-xs sm:text-sm mt-0.5 leading-relaxed">A soft cotton or bamboo-cotton top sheet can provide a smoother contact surface, particularly important for prolonged wear</p>
+                      </div>
+                      <div>
+                        <h4 className="font-heading font-semibold text-charcoal text-sm">7. Better Odour and Moisture Management</h4>
+                        <p className="text-charcoal-light text-xs sm:text-sm mt-0.5 leading-relaxed">Bamboo fibre has useful moisture-management properties, though avoid making strong antibacterial or odour-control claims unless they are supported by appropriate testing</p>
+                      </div>
+                      <div>
+                        <h4 className="font-heading font-semibold text-charcoal text-sm">8. Unbelievable Absorption</h4>
+                        <p className="text-charcoal-light text-xs sm:text-sm mt-0.5 leading-relaxed">Bio-based SAPs 12x times more absorption in heavy flow. It helps you dry, comfort and confident during long wear.</p>
+                      </div>
+                      <div>
+                        <h4 className="font-heading font-semibold text-charcoal text-sm">9. Wide Back Coverage</h4>
+                        <p className="text-charcoal-light text-xs sm:text-sm mt-0.5 leading-relaxed">Extra protection where you need it most</p>
+                      </div>
+                      <div>
+                        <h4 className="font-heading font-semibold text-charcoal text-sm">10. Side Wall Protection</h4>
+                        <p className="text-charcoal-light text-xs sm:text-sm mt-0.5 leading-relaxed">Helps prevent side leaks, a worry-free movement.</p>
+                      </div>
+                      <div>
+                        <h4 className="font-heading font-semibold text-charcoal text-sm">11. Biodegradable</h4>
+                        <p className="text-charcoal-light text-xs sm:text-sm mt-0.5 leading-relaxed">Care for you & care for nature</p>
+                      </div>
+                      <div>
+                        <h4 className="font-heading font-semibold text-charcoal text-sm">12. No Harmful Chemicals</h4>
+                        <p className="text-charcoal-light text-xs sm:text-sm mt-0.5 leading-relaxed">Free from harmful chemicals, Gentle protection for your skin & comfort</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
 
               <p className="text-charcoal-light leading-relaxed mb-8">

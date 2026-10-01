@@ -50,9 +50,14 @@ export default function ContactPage() {
                 <div>
                   <h3 className="text-xl font-heading font-bold text-charcoal mb-2">Call Us</h3>
                   <p className="text-charcoal-light mb-4">We're available Monday through Saturday to help with your inquiries.</p>
-                  <a href="tel:+919544114949" className="inline-flex font-semibold text-charcoal hover:text-sage transition-colors text-lg">
-                    +91 9544114949
-                  </a>
+                  <div className="flex flex-col gap-2">
+                    <a href="tel:+919544114949" className="inline-flex font-semibold text-charcoal hover:text-sage transition-colors text-lg">
+                      +91 9544114949
+                    </a>
+                    <a href="tel:+919544114848" className="inline-flex font-semibold text-charcoal hover:text-sage transition-colors text-lg">
+                      +91 95 44 11 48 48
+                    </a>
+                  </div>
                 </div>
               </div>
 

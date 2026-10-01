@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ShieldCheck, Leaf, Heart, Droplets, CheckCircle2 } from "lucide-react";
+import KeyFeaturesButton from "@/components/product/KeyFeaturesButton";
 
 export default function Home() {
   return (
@@ -175,12 +176,11 @@ export default function Home() {
                     ))}
                     <span className="text-xs text-charcoal-light ml-1">(4.8)</span>
                   </div>
-                  <div className="mt-auto flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <span className="text-lg font-bold text-charcoal">₹120</span>
-                      <span className="text-sm text-charcoal-light line-through">₹150</span>
-                    </div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-lg font-bold text-charcoal">₹120</span>
+                    <span className="text-sm text-charcoal-light line-through">₹150</span>
                   </div>
+                  <KeyFeaturesButton />
                 </div>
               </div>
             ))}

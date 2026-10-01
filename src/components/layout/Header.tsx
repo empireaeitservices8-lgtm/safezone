@@ -42,7 +42,7 @@ export function Header() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between w-full h-[100px] md:h-[130px]">
+          <div className="flex items-center justify-between w-full h-[110px] md:h-[145px]">
             
             {/* Mobile Left: Hamburger */}
             <div className="flex-1 flex lg:hidden items-center justify-start">
@@ -56,9 +56,17 @@ export function Header() {
             </div>
 
             {/* Logo: Centered on Mobile, Left on Desktop */}
-            <div className="flex lg:flex-1 items-center justify-center lg:justify-start h-full py-2">
-              <Link href="/" className="h-full flex items-center">
-                <img src="/logo.png" alt="Safezone" className="h-full w-auto object-contain max-h-[84px] md:max-h-[110px]" />
+            <div className="flex lg:flex-1 items-center justify-center lg:justify-start h-full py-1">
+              <Link href="/" className="h-full flex items-center gap-3">
+                <img src="/logo.png" alt="Safezone Healthcare" className="h-full w-auto object-contain max-h-[105px] md:max-h-[138px]" />
+                <div className="flex flex-col justify-center">
+                  <span className="font-heading font-bold text-base md:text-xl text-charcoal tracking-tight leading-tight whitespace-nowrap">
+                    Safezone Healthcare
+                  </span>
+                  <span className="text-[10px] md:text-xs text-charcoal-light font-medium tracking-wide whitespace-nowrap">
+                    ISO 9001:2026 Certified company
+                  </span>
+                </div>
               </Link>
             </div>
 
@@ -112,8 +120,16 @@ export function Header() {
           {/* Panel */}
           <div className="fixed inset-y-0 left-0 w-4/5 max-w-sm bg-ivory shadow-xl overflow-y-auto pt-5 pb-6 flex flex-col">
             <div className="px-4 flex items-center justify-between mb-8">
-              <Link href="/" onClick={() => setMobileMenuOpen(false)}>
-                <img src="/logo.png" alt="Safezone" className="h-20 w-auto object-contain" />
+              <Link href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3">
+                <img src="/logo.png" alt="Safezone Healthcare" className="h-18 md:h-20 w-auto object-contain" />
+                <div className="flex flex-col justify-center">
+                  <span className="font-heading font-bold text-base text-charcoal tracking-tight leading-tight">
+                    Safezone Healthcare
+                  </span>
+                  <span className="text-[10px] text-charcoal-light font-medium tracking-wide">
+                    ISO 9001:2026 Certified company
+                  </span>
+                </div>
               </Link>
               <button
                 onClick={() => setMobileMenuOpen(false)}
