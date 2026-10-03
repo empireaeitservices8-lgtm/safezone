@@ -52,7 +52,7 @@ export default function ContactPage() {
                   <p className="text-charcoal-light mb-4">We're available Monday through Saturday to help with your inquiries.</p>
                   <div className="flex flex-col gap-2">
                     <a href="tel:+919544114949" className="inline-flex font-semibold text-charcoal hover:text-sage transition-colors text-lg">
-                      +91 9544114949
+                      +91 95 44 11 49 49
                     </a>
                     <a href="tel:+919544114848" className="inline-flex font-semibold text-charcoal hover:text-sage transition-colors text-lg">
                       +91 95 44 11 48 48
@@ -69,7 +69,7 @@ export default function ContactPage() {
                   <h3 className="text-xl font-heading font-bold text-charcoal mb-2">WhatsApp Us</h3>
                   <p className="text-charcoal-light mb-4">Send us a quick message on WhatsApp for faster support.</p>
                   <a href="https://wa.me/919544114949" target="_blank" rel="noopener noreferrer" className="inline-flex font-semibold text-charcoal hover:text-sage transition-colors text-lg">
-                    +91 9544114949
+                    +91 95 44 11 49 49
                   </a>
                 </div>
               </div>

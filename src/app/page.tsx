@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ShieldCheck, Leaf, Heart, Droplets, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ShieldCheck, Leaf, Heart, CheckCircle2 } from "lucide-react";
 import KeyFeaturesButton from "@/components/product/KeyFeaturesButton";
 
 export default function Home() {
@@ -105,23 +105,48 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "Sanitary Pads", desc: "Everyday comfort & protection", href: "/shop/sanitary-pads", color: "bg-blush" },
-              { title: "Wellness", desc: "For your overall well-being", href: "/shop/wellness", color: "bg-sage-light" },
-              { title: "Personal Hygiene", desc: "Clean and gentle essentials", href: "/shop", color: "bg-ivory-dark" },
-              { title: "New Arrivals", desc: "Discover our latest additions", href: "/shop", color: "bg-[#F0EBE1]" },
+              {
+                title: "Sanitary Pads",
+                desc: "Everyday comfort & protection",
+                href: "/shop/sanitary-pads",
+                image: "/images/categories/sanitary-pads.jpg",
+              },
+              {
+                title: "Wellness",
+                desc: "For your overall well-being",
+                href: "/shop/wellness",
+                image: "/images/categories/wellness.jpg",
+              },
+              {
+                title: "Personal Hygiene",
+                desc: "Clean and gentle essentials",
+                href: "/shop",
+                image: "/images/categories/hygiene.jpg",
+              },
+              {
+                title: "New Arrivals",
+                desc: "Discover our latest additions",
+                href: "/shop",
+                image: "/images/categories/new-arrivals.png",
+              },
             ].map((category) => (
               <Link key={category.title} href={category.href} className="group block h-full">
-                <div className={`relative h-[360px] rounded-[32px] p-8 flex flex-col justify-end overflow-hidden transition-transform duration-500 hover:-translate-y-2 ${category.color}`}>
-                  <div className="relative z-10 transition-transform duration-500 group-hover:translate-x-2">
-                    <h3 className="text-2xl font-heading font-bold text-charcoal mb-2">{category.title}</h3>
-                    <p className="text-charcoal-light text-sm mb-6">{category.desc}</p>
-                    <span className="inline-flex items-center text-sm font-semibold text-charcoal">
+                <div className="relative h-[380px] rounded-[32px] p-7 flex flex-col justify-end overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-charcoal/5">
+                  <Image
+                    src={category.image}
+                    alt={category.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                  {/* Subtle darkening gradient at bottom for crystal clear text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-transparent transition-opacity duration-300 group-hover:from-charcoal/95" />
+
+                  <div className="relative z-10 transition-transform duration-500 group-hover:translate-x-1">
+                    <h3 className="text-2xl font-heading font-bold text-white mb-2">{category.title}</h3>
+                    <p className="text-white/80 text-sm mb-5 leading-relaxed">{category.desc}</p>
+                    <span className="inline-flex items-center text-sm font-semibold text-white group-hover:text-blush transition-colors">
                       Explore <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-2" />
                     </span>
-                  </div>
-                  {/* Note: In a real scenario, absolute positioned lifestyle images for categories would be here */}
-                  <div className="absolute top-0 right-0 p-8 opacity-20 transition-opacity group-hover:opacity-40">
-                    <Droplets className="w-24 h-24" />
                   </div>
                 </div>
               </Link>

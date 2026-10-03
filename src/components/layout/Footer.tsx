@@ -73,13 +73,13 @@ export function Footer() {
           </div>
           <div className="flex flex-col md:items-end justify-center space-y-2">
             <a href="tel:+919544114949" className="text-sm text-charcoal-light hover:text-sage transition-colors flex items-center">
-              Mobile: +91 9544114949
+              Mobile: +91 95 44 11 49 49
             </a>
             <a href="tel:+919544114848" className="text-sm text-charcoal-light hover:text-sage transition-colors flex items-center">
               Mobile: +91 95 44 11 48 48
             </a>
             <a href="https://wa.me/919544114949" target="_blank" rel="noopener noreferrer" className="text-sm text-charcoal-light hover:text-sage transition-colors flex items-center">
-              WhatsApp: +91 9544114949
+              WhatsApp: +91 95 44 11 49 49
             </a>
           </div>
         </div>
