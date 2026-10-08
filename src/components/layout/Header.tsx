@@ -64,7 +64,7 @@ export function Header() {
                     Safezone Healthcare
                   </span>
                   <span className="text-[10px] md:text-xs text-charcoal-light font-medium tracking-wide whitespace-nowrap">
-                    ISO 9001:2026 Certified company
+                    ISO 9001:2015 Certified company
                   </span>
                 </div>
               </Link>
@@ -127,7 +127,7 @@ export function Header() {
                     Safezone Healthcare
                   </span>
                   <span className="text-[10px] text-charcoal-light font-medium tracking-wide">
-                    ISO 9001:2026 Certified company
+                    ISO 9001:2015 Certified company
                   </span>
                 </div>
               </Link>

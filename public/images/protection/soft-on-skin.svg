@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none" className="w-full h-full">
+  <defs>
+    <linearGradient id="bgGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCF8F7" />
+      <stop offset="100%" stop-color="#F7ECE8" />
+    </linearGradient>
+    <linearGradient id="cottonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#F2EBE5" />
+    </linearGradient>
+    <linearGradient id="featherGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8C5B8" />
+      <stop offset="100%" stop-color="#D49E8D" />
+    </linearGradient>
+    <filter id="softGlow6" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#7A564A" flood-opacity="0.1" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="280" rx="24" fill="url(#bgGrad6)" />
+
+  <!-- Gentle ambient curves -->
+  <path d="M0 160 C120 120, 260 220, 400 150 L400 280 L0 280 Z" fill="#FDFBF7" opacity="0.6" />
+
+  <!-- Organic Cotton Flower (Center Left) -->
+  <g transform="translate(100, 75)" filter="url(#softGlow6)">
+    <!-- Cotton Calyx (Stem Leaves) -->
+    <path d="M50 110 C50 135, 60 145, 65 160 L60 160 C55 145, 45 135, 45 110 Z" fill="#8A7768" />
+    <path d="M55 110 C40 100, 30 115, 20 105 C35 95, 45 105, 55 110 Z" fill="#756456" />
+    <path d="M55 110 C70 100, 80 115, 90 105 C75 95, 65 105, 55 110 Z" fill="#756456" />
+
+    <!-- Fluffy Cotton Puffs (Cloud-like soft bolls) -->
+    <circle cx="35" cy="65" r="28" fill="url(#cottonGrad)" stroke="#EBDED6" stroke-width="1.5" />
+    <circle cx="75" cy="65" r="28" fill="url(#cottonGrad)" stroke="#EBDED6" stroke-width="1.5" />
+    <circle cx="55" cy="40" r="30" fill="url(#cottonGrad)" stroke="#EBDED6" stroke-width="1.5" />
+    <circle cx="55" cy="80" r="26" fill="url(#cottonGrad)" stroke="#EBDED6" stroke-width="1.5" />
+    <circle cx="55" cy="60" r="22" fill="#FFFFFF" />
+
+    <!-- Cotton Texture curves -->
+    <path d="M42 38 C48 30, 62 30, 68 38" stroke="#DFCEC3" stroke-width="1.5" fill="none" stroke-linecap="round" />
+    <path d="M26 62 C30 52, 40 50, 45 56" stroke="#DFCEC3" stroke-width="1.5" fill="none" stroke-linecap="round" />
+    <path d="M65 56 C70 50, 80 52, 84 62" stroke="#DFCEC3" stroke-width="1.5" fill="none" stroke-linecap="round" />
+  </g>
+
+  <!-- Gentle Feather Floating (Center Right) -->
+  <g transform="translate(220, 60)" filter="url(#softGlow6)">
+    <!-- Feather Shaft -->
+    <path d="M20 140 C50 90, 85 40, 110 10" stroke="#B88A7B" stroke-width="2" stroke-linecap="round" fill="none" />
+    <!-- Feather Vane (Soft Plumage) -->
+    <path d="M110 10 
+             C90 25, 60 40, 30 75 
+             C15 95, 10 120, 20 140 
+             C35 125, 45 105, 55 90 
+             C75 60, 95 35, 110 10 Z" 
+          fill="url(#featherGrad)" opacity="0.85" />
+    <path d="M110 10 
+             C105 35, 95 65, 75 95 
+             C65 110, 50 125, 35 135 
+             C50 120, 65 100, 80 75 
+             C95 50, 105 30, 110 10 Z" 
+          fill="#F5DDD3" opacity="0.9" />
+  </g>
+
+  <!-- Softness Score / Derm-Tested Badge (Top Left) -->
+  <g transform="translate(25, 25)" filter="url(#softGlow6)">
+    <rect width="135" height="30" rx="15" fill="#FFFFFF" stroke="#EED8D0" stroke-width="1.5" />
+    <circle cx="16" cy="15" r="7" fill="#E8C5B8" />
+    <path d="M13 15 L15 17 L19 13" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    <text x="73" y="19" fill="#6E4437" font-family="system-ui, sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">
+      CLOUD-SOFT TOUCH
+    </text>
+  </g>
+
+  <!-- Comfort for Prolonged Wear Banner -->
+  <g transform="translate(85, 230)">
+    <rect width="230" height="26" rx="13" fill="#FFFFFF" stroke="#EADBD5" stroke-width="1" />
+    <text x="115" y="17" fill="#755044" font-family="system-ui, sans-serif" font-size="9.5" font-weight="600" text-anchor="middle">
+      Zero Friction • Gentle on Sensitive Skin
+    </text>
+  </g>
+</svg>

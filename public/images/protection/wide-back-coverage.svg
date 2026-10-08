@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none" className="w-full h-full">
+  <defs>
+    <linearGradient id="bgGrad9" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F9F7FA" />
+      <stop offset="100%" stop-color="#EEE8F1" />
+    </linearGradient>
+    <linearGradient id="nightPadGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8E78A5" />
+      <stop offset="100%" stop-color="#5E4973" />
+    </linearGradient>
+    <filter id="softGlow9" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#4B395E" flood-opacity="0.14" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="280" rx="24" fill="url(#bgGrad9)" />
+
+  <!-- Moon / Night Protection ambient backdrop -->
+  <g opacity="0.25">
+    <circle cx="330" cy="65" r="35" fill="#C5B4D6" />
+    <circle cx="340" cy="58" r="30" fill="url(#bgGrad9)" />
+    <!-- Stars -->
+    <circle cx="280" cy="45" r="2" fill="#8E78A5" />
+    <circle cx="360" cy="115" r="2.5" fill="#8E78A5" />
+    <circle cx="320" cy="130" r="1.5" fill="#8E78A5" />
+  </g>
+
+  <!-- Extended Wide Back Pad Silhouette -->
+  <g transform="translate(130, 20)" filter="url(#softGlow9)">
+    <!-- Pad with Ultra-Wide Fan-Tail Rear Body -->
+    <!-- Front is narrower (top), Back flares widely (bottom) -->
+    <path d="M70 20 
+             C95 20, 105 40, 105 75 
+             C105 95, 95 105, 95 120 
+             C95 135, 115 150, 135 170 
+             C155 190, 150 225, 70 225 
+             C-10 225, -15 190, 5 170 
+             C25 150, 45 135, 45 120 
+             C45 105, 35 95, 35 75 
+             C35 40, 45 20, 70 20 Z" 
+          fill="#FFFFFF" stroke="#9A83AF" stroke-width="2.5" />
+
+    <!-- Center Absorption Core -->
+    <path d="M70 35 
+             C85 35, 90 50, 90 80 
+             C90 100, 80 110, 80 125 
+             C80 140, 95 155, 115 175 
+             C125 185, 115 210, 70 210 
+             C25 210, 15 185, 25 175 
+             C45 155, 60 140, 60 125 
+             C60 110, 50 100, 50 80 
+             C50 50, 55 35, 70 35 Z" 
+          fill="#F5EFF9" stroke="#B8A4CB" stroke-width="1.8" stroke-dasharray="4 3" />
+
+    <!-- Wide Back Flare Dimension Arrows (Bottom) -->
+    <g stroke="#7E6596" stroke-width="2" stroke-linecap="round" fill="none">
+      <line x1="-5" y1="205" x2="145" y2="205" />
+      <path d="M2 200 L-6 205 L2 210" />
+      <path d="M138 200 L146 205 L138 210" />
+    </g>
+
+    <!-- Core Text -->
+    <text x="70" y="195" fill="#5E4973" font-family="system-ui, sans-serif" font-size="9" font-weight="700" text-anchor="middle">
+      WIDE REAR FAN
+    </text>
+  </g>
+
+  <!-- Side Wings of Pad -->
+  <g transform="translate(130, 20)">
+    <path d="M40 70 C10 65, 0 95, 38 100" fill="#EDE4F2" stroke="#9A83AF" stroke-width="1.8" />
+    <path d="M100 70 C130 65, 140 95, 102 100" fill="#EDE4F2" stroke="#9A83AF" stroke-width="1.8" />
+  </g>
+
+  <!-- Tag / Badge Top Left -->
+  <g transform="translate(25, 25)" filter="url(#softGlow9)">
+    <rect width="135" height="30" rx="15" fill="#FFFFFF" stroke="#D3C5E0" stroke-width="1.5" />
+    <text x="67" y="19" fill="#4A3460" font-family="system-ui, sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">
+      🌙 OVERNIGHT SECURE
+    </text>
+  </g>
+
+  <!-- Extra Wide Coverage Callout (Left) -->
+  <g transform="translate(25, 150)" filter="url(#softGlow9)">
+    <rect width="90" height="42" rx="12" fill="#FFFFFF" stroke="#D3C5E0" stroke-width="1.5" />
+    <text x="45" y="18" fill="#5E4973" font-family="system-ui, sans-serif" font-size="9" font-weight="700" text-anchor="middle">
+      +40% WIDER
+    </text>
+    <text x="45" y="32" fill="#7E6894" font-family="system-ui, sans-serif" font-size="8" font-weight="600" text-anchor="middle">
+      Back Coverage
+    </text>
+  </g>
+
+  <!-- Bottom Caption -->
+  <g transform="translate(85, 235)">
+    <rect width="230" height="26" rx="13" fill="#FFFFFF" stroke="#DCCFE6" stroke-width="1" />
+    <text x="115" y="17" fill="#58416D" font-family="system-ui, sans-serif" font-size="9.5" font-weight="600" text-anchor="middle">
+      Total Zero-Back-Leak Sleep Protection
+    </text>
+  </g>
+</svg>

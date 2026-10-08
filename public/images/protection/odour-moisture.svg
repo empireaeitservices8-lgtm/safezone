@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none" className="w-full h-full">
+  <defs>
+    <linearGradient id="bgGrad7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F6FAF6" />
+      <stop offset="100%" stop-color="#E5EFE5" />
+    </linearGradient>
+    <linearGradient id="freshAura" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#80B89D" />
+      <stop offset="100%" stop-color="#4B8669" />
+    </linearGradient>
+    <filter id="softGlow7" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#2E5A44" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="280" rx="24" fill="url(#bgGrad7)" />
+
+  <!-- Freshness radiating aura rings -->
+  <g stroke="#7BB899" stroke-width="1.5" stroke-dasharray="4 4" fill="none" opacity="0.4">
+    <circle cx="200" cy="140" r="60" />
+    <circle cx="200" cy="140" r="90" />
+    <circle cx="200" cy="140" r="120" />
+  </g>
+
+  <!-- Central Fresh Shield / Botanical Molecule Core -->
+  <g transform="translate(140, 75)" filter="url(#softGlow7)">
+    <circle cx="60" cy="65" r="55" fill="#FFFFFF" stroke="#93C9AC" stroke-width="2.5" />
+    <circle cx="60" cy="65" r="44" fill="url(#freshAura)" opacity="0.15" />
+
+    <!-- Pure Botanical Fresh Leaf inside Shield -->
+    <path d="M60 30 C75 45, 85 70, 60 95 C35 70, 45 45, 60 30 Z" fill="url(#freshAura)" />
+    <line x1="60" y1="40" x2="60" y2="88" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" />
+    <line x1="60" y1="55" x2="70" y2="50" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" />
+    <line x1="60" y1="68" x2="50" y2="63" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" />
+  </g>
+
+  <!-- Odour Neutralization Sparkles -->
+  <g fill="#4B8669">
+    <!-- Sparkle 1 (Top Left) -->
+    <path d="M85 80 Q95 80, 95 70 Q95 80, 105 80 Q95 80, 95 90 Q95 80, 85 80 Z" />
+    <!-- Sparkle 2 (Bottom Right) -->
+    <path d="M295 180 Q305 180, 305 170 Q305 180, 315 180 Q305 180, 305 190 Q305 180, 295 180 Z" />
+    <!-- Sparkle 3 (Top Right) -->
+    <path d="M285 75 Q293 75, 293 67 Q293 75, 301 75 Q293 75, 293 83 Q293 75, 285 75 Z" />
+    <!-- Sparkle 4 (Bottom Left) -->
+    <path d="M95 185 Q103 185, 103 177 Q103 185, 111 185 Q103 185, 103 193 Q103 185, 95 185 Z" />
+  </g>
+
+  <!-- Clean Air Flow Vortex Curves -->
+  <g stroke="#5AA581" stroke-width="2.5" stroke-linecap="round" fill="none">
+    <path d="M70 140 C100 120, 120 125, 135 140" />
+    <path d="M265 140 C280 155, 300 160, 330 140" />
+  </g>
+
+  <!-- Freshness Callout Badge (Top Left) -->
+  <g transform="translate(25, 25)" filter="url(#softGlow7)">
+    <rect width="135" height="30" rx="15" fill="#FFFFFF" stroke="#C4E0D1" stroke-width="1.5" />
+    <text x="67" y="19" fill="#245A40" font-family="system-ui, sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">
+      🌿 NATURAL FRESHNESS
+    </text>
+  </g>
+
+  <!-- Bottom Moisture Lock Text -->
+  <g transform="translate(85, 230)">
+    <rect width="230" height="26" rx="13" fill="#FFFFFF" stroke="#CCE5D8" stroke-width="1" />
+    <text x="115" y="17" fill="#31634B" font-family="system-ui, sans-serif" font-size="9.5" font-weight="600" text-anchor="middle">
+      Natural Odour Lock • Pure Bamboo Freshness
+    </text>
+  </g>
+</svg>

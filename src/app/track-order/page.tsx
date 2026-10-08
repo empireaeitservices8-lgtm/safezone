@@ -12,27 +12,27 @@ export default function TrackOrderPage() {
   };
 
   return (
-    <div className="flex flex-col w-full min-h-[80vh] bg-ivory pt-24 pb-32 px-4">
+    <div className="flex flex-col w-full min-h-[70vh] bg-ivory pt-8 sm:pt-12 md:pt-14 pb-12 sm:pb-16 px-4">
       <div className="max-w-3xl mx-auto w-full text-center">
         
-        <h1 className="text-4xl md:text-5xl font-heading font-bold text-charcoal mb-4">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-charcoal mb-3 sm:mb-4">
           Track Your Order
         </h1>
-        <p className="text-lg text-charcoal-light mb-12">
+        <p className="text-base sm:text-lg text-charcoal-light mb-6 sm:mb-8">
           Enter your order number and mobile/email to check the status.
         </p>
 
-        <div className="bg-white p-8 md:p-12 rounded-[32px] shadow-sm border border-gray-100 max-w-xl mx-auto mb-16">
-          <form onSubmit={handleTrack} className="space-y-6 text-left">
-            <div className="space-y-2">
+        <div className="bg-white p-5 sm:p-8 md:p-10 rounded-[24px] sm:rounded-[32px] shadow-sm border border-gray-100 max-w-xl mx-auto mb-8 sm:mb-12">
+          <form onSubmit={handleTrack} className="space-y-4 sm:space-y-6 text-left">
+            <div className="space-y-1.5 sm:space-y-2">
               <label htmlFor="orderId" className="block text-sm font-medium text-charcoal">Order Number</label>
               <input type="text" id="orderId" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-sage focus:ring-1 focus:ring-sage outline-none" placeholder="e.g. #SZ-94821" />
             </div>
-            <div className="space-y-2">
+            <div className="space-y-1.5 sm:space-y-2">
               <label htmlFor="contact" className="block text-sm font-medium text-charcoal">Mobile or Email</label>
               <input type="text" id="contact" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-sage focus:ring-1 focus:ring-sage outline-none" placeholder="Registered mobile or email" />
             </div>
-            <button type="submit" className="w-full py-4 bg-charcoal text-white rounded-xl hover:bg-sage transition-colors font-medium text-lg flex items-center justify-center gap-2">
+            <button type="submit" className="w-full py-3.5 sm:py-4 bg-charcoal text-white rounded-xl hover:bg-sage transition-colors font-medium text-base sm:text-lg flex items-center justify-center gap-2">
               <Search className="w-5 h-5" />
               Track Order
             </button>
@@ -41,10 +41,10 @@ export default function TrackOrderPage() {
 
         {/* Tracking Timeline Component - Shown after submit */}
         {isTracking && (
-          <div className="bg-white p-8 md:p-12 rounded-[32px] shadow-sm border border-gray-100 text-left">
-            <h2 className="text-2xl font-heading font-bold text-charcoal mb-8 text-center">Order Status: #SZ-94821</h2>
+          <div className="bg-white p-5 sm:p-8 md:p-10 rounded-[24px] sm:rounded-[32px] shadow-sm border border-gray-100 text-left">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-charcoal mb-6 text-center">Order Status: #SZ-94821</h2>
             
-            <div className="relative border-l-2 border-sage-light ml-4 space-y-10 py-2">
+            <div className="relative border-l-2 border-sage-light ml-4 space-y-6 sm:space-y-8 py-2">
               {[
                 { status: "Order Placed", date: "14 Sep, 10:30 AM", active: true, done: true },
                 { status: "Confirmed", date: "14 Sep, 11:15 AM", active: true, done: true },

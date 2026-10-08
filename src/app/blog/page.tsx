@@ -40,22 +40,22 @@ const blogPosts = [
 export default function BlogPage() {
   return (
     <div className="flex flex-col w-full bg-white">
-      <section className="py-24 bg-sage text-white text-center px-4">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6">Knowledge for Better Period Care</h1>
-        <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+      <section className="py-10 sm:py-14 md:py-16 bg-sage text-white text-center px-4">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-3 sm:mb-4">Knowledge for Better Period Care</h1>
+        <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
           Educational content, tips, and insights for your everyday wellness.
         </p>
       </section>
 
-      <section className="py-24">
+      <section className="py-10 sm:py-14 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
             {blogPosts.map((post) => (
-              <article key={post.id} className="group flex flex-col bg-ivory rounded-[32px] overflow-hidden border border-sage-light/30 hover:border-sage transition-colors">
+              <article key={post.id} className="group flex flex-col bg-ivory rounded-[24px] sm:rounded-[32px] overflow-hidden border border-sage-light/30 hover:border-sage transition-colors">
                 <div className="relative aspect-[3/2] bg-sage-light flex items-center justify-center overflow-hidden">
-                  <BookOpen className="w-12 h-12 text-sage/40 transition-transform duration-500 group-hover:scale-110" />
+                  <BookOpen className="w-10 sm:w-12 h-10 sm:h-12 text-sage/40 transition-transform duration-500 group-hover:scale-110" />
                 </div>
-                <div className="p-8 flex flex-col flex-grow">
+                <div className="p-5 sm:p-6 md:p-8 flex flex-col flex-grow">
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-xs font-semibold text-sage-dark uppercase tracking-wider bg-white px-3 py-1 rounded-full">{post.category}</span>
                     <span className="text-xs text-charcoal-light">{post.date}</span>

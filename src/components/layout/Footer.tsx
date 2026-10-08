@@ -3,23 +3,23 @@ import Image from "next/image";
 
 export function Footer() {
   return (
-    <footer className="bg-ivory-dark pt-16 pb-8 border-t border-sage-light/30">
+    <footer className="bg-ivory-dark pt-10 md:pt-14 pb-6 md:pb-8 border-t border-sage-light/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-10 lg:gap-8 mb-10 md:mb-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <Link href="/" className="mb-6 flex items-center gap-3.5">
-              <img src="/logo.png" alt="Safezone Healthcare" className="h-24 md:h-32 w-auto object-contain" />
+            <Link href="/" className="mb-4 sm:mb-5 flex items-center gap-3.5">
+              <img src="/logo.png" alt="Safezone Healthcare" className="h-20 sm:h-24 md:h-28 w-auto object-contain" />
               <div className="flex flex-col justify-center">
-                <span className="font-heading font-bold text-xl md:text-2xl text-charcoal tracking-tight leading-tight">
+                <span className="font-heading font-bold text-lg sm:text-xl md:text-2xl text-charcoal tracking-tight leading-tight">
                   Safezone Healthcare
                 </span>
                 <span className="text-xs text-charcoal-light font-medium tracking-wide">
-                  ISO 9001:2026 Certified company
+                  ISO 9001:2015 Certified company
                 </span>
               </div>
             </Link>
-            <p className="text-charcoal-light text-sm max-w-sm mb-8 leading-relaxed">
+            <p className="text-charcoal-light text-sm max-w-sm mb-4 sm:mb-6 leading-relaxed">
               Personal hygiene & wellness, thoughtfully designed. We focus on developing high-quality sanitary pads and wellness products designed around the real needs of women.
             </p>
           </div>
@@ -60,9 +60,9 @@ export function Footer() {
         </div>
 
         {/* Contact Info */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-8 border-t border-charcoal/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-6 border-t border-charcoal/10">
           <div>
-            <h4 className="font-heading font-semibold text-charcoal mb-3">Contact</h4>
+            <h4 className="font-heading font-semibold text-charcoal mb-2 sm:mb-3">Contact</h4>
             <address className="not-italic text-sm text-charcoal-light leading-relaxed">
               Safezone<br />
               Febisel Building<br />
@@ -71,7 +71,7 @@ export function Footer() {
               Kerala, India
             </address>
           </div>
-          <div className="flex flex-col md:items-end justify-center space-y-2">
+          <div className="flex flex-col md:items-end justify-center space-y-1.5 sm:space-y-2">
             <a href="tel:+919544114949" className="text-sm text-charcoal-light hover:text-sage transition-colors flex items-center">
               Mobile: +91 95 44 11 49 49
             </a>
@@ -85,8 +85,8 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-charcoal/10 flex flex-col md:flex-row items-center justify-between">
-          <p className="text-xs text-charcoal-light mb-4 md:mb-0">
+        <div className="pt-6 border-t border-charcoal/10 flex flex-col md:flex-row items-center justify-between">
+          <p className="text-xs text-charcoal-light mb-2 md:mb-0">
             © {new Date().getFullYear()} Safezone. All rights reserved.
           </p>
           <div className="flex space-x-4">

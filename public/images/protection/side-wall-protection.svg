@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none" className="w-full h-full">
+  <defs>
+    <linearGradient id="bgGrad10" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5F8F7" />
+      <stop offset="100%" stop-color="#E5ECE9" />
+    </linearGradient>
+    <linearGradient id="wallGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4F7969" />
+      <stop offset="100%" stop-color="#345448" />
+    </linearGradient>
+    <filter id="softGlow10" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#243C33" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="280" rx="24" fill="url(#bgGrad10)" />
+
+  <!-- Active motion dynamic ripple lines -->
+  <g stroke="#97B8AB" stroke-width="1.5" stroke-dasharray="5 5" fill="none" opacity="0.4">
+    <path d="M50 140 C 90 90, 130 190, 180 140 C 230 90, 270 190, 350 140" />
+    <path d="M50 160 C 90 110, 130 210, 180 160 C 230 110, 270 210, 350 160" />
+  </g>
+
+  <!-- 3D Side Walls Guard Isometric/Elevated View -->
+  <g transform="translate(90, 60)" filter="url(#softGlow10)">
+    <!-- Base Core Platform -->
+    <rect x="30" y="25" width="160" height="130" rx="20" fill="#FFFFFF" stroke="#9AB8AC" stroke-width="2" />
+
+    <!-- Left 3D Raised Flexible Barrier Wall -->
+    <path d="M35 35 
+             C48 55, 48 115, 35 145 
+             L25 145 
+             C38 115, 38 55, 25 35 Z" 
+          fill="url(#wallGrad)" />
+    <!-- Wall highlight ridge -->
+    <path d="M35 35 C48 55, 48 115, 35 145" stroke="#7CB09D" stroke-width="2.5" fill="none" stroke-linecap="round" />
+
+    <!-- Right 3D Raised Flexible Barrier Wall -->
+    <path d="M185 35 
+             C172 55, 172 115, 185 145 
+             L195 145 
+             C182 115, 182 55, 195 35 Z" 
+          fill="url(#wallGrad)" />
+    <!-- Wall highlight ridge -->
+    <path d="M185 35 C172 55, 172 115, 185 145" stroke="#7CB09D" stroke-width="2.5" fill="none" stroke-linecap="round" />
+
+    <!-- Fluid Repulsion Inner Arrows (demonstrating containment) -->
+    <g stroke="#2F5547" stroke-width="2" stroke-linecap="round" fill="none">
+      <!-- Repelled from left wall -->
+      <path d="M55 75 L75 85 M65 72 L75 85 L62 86" />
+      <!-- Repelled from right wall -->
+      <path d="M165 75 L145 85 M155 72 L145 85 L158 86" />
+      <!-- Center lock zone -->
+      <ellipse cx="110" cy="90" rx="35" ry="25" fill="#EBF2EE" stroke="#A6C2B6" stroke-width="1.5" />
+      <text x="110" y="94" fill="#2E4F42" font-family="system-ui, sans-serif" font-size="9" font-weight="700" text-anchor="middle">
+        CENTRAL LOCK
+      </text>
+    </g>
+
+    <!-- 3D Wall Labels -->
+    <text x="5" y="95" fill="#243F34" font-family="system-ui, sans-serif" font-size="8.5" font-weight="700" text-anchor="end">
+      3D GUARD
+    </text>
+    <text x="215" y="95" fill="#243F34" font-family="system-ui, sans-serif" font-size="8.5" font-weight="700" text-anchor="start">
+      3D GUARD
+    </text>
+  </g>
+
+  <!-- Top Badge: Worry-Free Movement -->
+  <g transform="translate(25, 25)" filter="url(#softGlow10)">
+    <rect width="140" height="30" rx="15" fill="#FFFFFF" stroke="#C4D8CF" stroke-width="1.5" />
+    <circle cx="16" cy="15" r="7" fill="#4F7969" />
+    <path d="M13 15 L15 17 L19 13" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    <text x="75" y="19" fill="#1C382F" font-family="system-ui, sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">
+      ZERO SIDE LEAKS
+    </text>
+  </g>
+
+  <!-- Active Movement Badge (Right) -->
+  <g transform="translate(265, 175)" filter="url(#softGlow10)">
+    <rect width="110" height="36" rx="12" fill="#FFFFFF" stroke="#C4D8CF" stroke-width="1.5" />
+    <text x="55" y="17" fill="#243F34" font-family="system-ui, sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">
+      ACTIVE FIT
+    </text>
+    <text x="55" y="29" fill="#587A6E" font-family="system-ui, sans-serif" font-size="8" font-weight="600" text-anchor="middle">
+      Moves With Body
+    </text>
+  </g>
+
+  <!-- Bottom Caption -->
+  <g transform="translate(85, 235)">
+    <rect width="230" height="26" rx="13" fill="#FFFFFF" stroke="#C9DCD4" stroke-width="1" />
+    <text x="115" y="17" fill="#2A4B3E" font-family="system-ui, sans-serif" font-size="9.5" font-weight="600" text-anchor="middle">
+      Dual Side Barriers • Worry-Free Daily Movement
+    </text>
+  </g>
+</svg>

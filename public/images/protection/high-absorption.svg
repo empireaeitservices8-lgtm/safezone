@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none" className="w-full h-full">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2F7F9" />
+      <stop offset="100%" stop-color="#E2EEF2" />
+    </linearGradient>
+    <linearGradient id="coreLayer" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8BB9C7" />
+      <stop offset="100%" stop-color="#559BB3" />
+    </linearGradient>
+    <linearGradient id="sapGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4CB5FF" />
+      <stop offset="100%" stop-color="#0E78B8" />
+    </linearGradient>
+    <filter id="softGlow2" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#2D5A68" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="280" rx="24" fill="url(#bgGrad2)" />
+
+  <!-- Background absorption ring accents -->
+  <g opacity="0.2" stroke="#559BB3" stroke-width="1.5" fill="none">
+    <ellipse cx="200" cy="180" rx="140" ry="40" />
+    <ellipse cx="200" cy="180" rx="170" ry="50" stroke-dasharray="6 6" />
+  </g>
+
+  <!-- Multi-Layer High Absorption Stack Illustration -->
+  <g transform="translate(60, 100)" filter="url(#softGlow2)">
+    <!-- Layer 4 (Bottom Leak-Proof Barrier) -->
+    <path d="M10 95 L270 95 C278 95, 282 98, 276 104 L220 125 C215 127, 65 127, 60 125 L4 104 C-2 98, 2 95, 10 95 Z" fill="#D3E2E6" stroke="#9BB8C2" stroke-width="1.5" />
+    <text x="295" y="115" fill="#4B6A75" font-family="system-ui, sans-serif" font-size="9" font-weight="600">Leak Guard Base</text>
+
+    <!-- Layer 3 (High Density SAP + Pulp Core) -->
+    <path d="M10 65 L270 65 C278 65, 282 68, 276 74 L220 95 C215 97, 65 97, 60 95 L4 74 C-2 68, 2 65, 10 65 Z" fill="url(#coreLayer)" stroke="#4A8A9E" stroke-width="1.5" />
+    <text x="295" y="85" fill="#1C5E73" font-family="system-ui, sans-serif" font-size="10" font-weight="700">SAP + Fluff Pulp Core</text>
+
+    <!-- Layer 2 (ADL Transfer Layer) -->
+    <path d="M10 35 L270 35 C278 35, 282 38, 276 44 L220 65 C215 67, 65 67, 60 65 L4 44 C-2 38, 2 35, 10 35 Z" fill="#EBF4F6" stroke="#B8D3DC" stroke-width="1.5" />
+    <text x="295" y="55" fill="#4B6A75" font-family="system-ui, sans-serif" font-size="9" font-weight="600">Distribution Sheet</text>
+
+    <!-- Layer 1 (Ultra-Soft Bamboo Top Sheet) -->
+    <path d="M10 5 L270 5 C278 5, 282 8, 276 14 L220 35 C215 37, 65 37, 60 35 L4 14 C-2 8, 2 5, 10 5 Z" fill="#FFFFFF" stroke="#9CA894" stroke-width="1.5" />
+    <text x="295" y="25" fill="#3D5037" font-family="system-ui, sans-serif" font-size="10" font-weight="700">Bamboo Top Sheet</text>
+
+    <!-- SAP Micro Beads inside the core (Layer 3) -->
+    <g fill="url(#sapGlow)">
+      <circle cx="50" cy="80" r="3" />
+      <circle cx="75" cy="77" r="3.5" />
+      <circle cx="105" cy="82" r="3" />
+      <circle cx="135" cy="78" r="4" />
+      <circle cx="165" cy="83" r="3.5" />
+      <circle cx="195" cy="79" r="4" />
+      <circle cx="225" cy="82" r="3" />
+    </g>
+  </g>
+
+  <!-- High Absorption Dynamic Droplets with Inflow Motion -->
+  <g transform="translate(180, 20)">
+    <!-- Main Absorption Wave -->
+    <path d="M20 0 C20 0, 8 18, 8 26 A12 12 0 0 0 32 26 C32 18, 20 0, 20 0 Z" fill="url(#sapGlow)" />
+    <circle cx="16" cy="20" r="3" fill="#FFFFFF" opacity="0.7" />
+
+    <!-- Inward absorption directional arrows -->
+    <path d="M20 34 L20 62 M15 54 L20 62 L25 54" stroke="#0E78B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- High Fluid Retention Capacity Callout Badge -->
+  <g transform="translate(25, 25)" filter="url(#softGlow2)">
+    <rect width="115" height="30" rx="15" fill="#FFFFFF" stroke="#CCE1E8" stroke-width="1.5" />
+    <circle cx="16" cy="15" r="7" fill="#4CB5FF" />
+    <path d="M14 15 L16 17 L19 13" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    <text x="66" y="19" fill="#1B4958" font-family="system-ui, sans-serif" font-size="10" font-weight="700" text-anchor="middle">
+      HIGH RETENTION
+    </text>
+  </g>
+</svg>

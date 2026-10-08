@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none" className="w-full h-full">
+  <defs>
+    <linearGradient id="bgGrad12" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCF9F7" />
+      <stop offset="100%" stop-color="#F2EAE5" />
+    </linearGradient>
+    <linearGradient id="pureShieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9CA894" />
+      <stop offset="100%" stop-color="#6B7B61" />
+    </linearGradient>
+    <filter id="softGlow12" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#4E3E34" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="280" rx="24" fill="url(#bgGrad12)" />
+
+  <!-- Radiating Purity Sunburst Rings -->
+  <g stroke="#C5B6AA" stroke-width="1.2" stroke-dasharray="4 6" fill="none" opacity="0.4">
+    <circle cx="200" cy="130" r="70" />
+    <circle cx="200" cy="130" r="100" />
+  </g>
+
+  <!-- Center Purity Shield of Protection -->
+  <g transform="translate(135, 55)" filter="url(#softGlow12)">
+    <!-- Shield Outer -->
+    <path d="M65 10 
+             L120 28 
+             C120 80, 105 125, 65 145 
+             C25 125, 10 80, 10 28 Z" 
+          fill="#FFFFFF" stroke="#6B7B61" stroke-width="2.5" />
+
+    <!-- Shield Inner Fill -->
+    <path d="M65 22 
+             L108 36 
+             C108 78, 96 114, 65 130 
+             C34 114, 22 78, 22 36 Z" 
+          fill="#F5F8F4" stroke="#9CA894" stroke-width="1.5" />
+
+    <!-- Chemical Flask Silhouette with NO / SLASH Symbol -->
+    <g transform="translate(47, 50)">
+      <!-- Chemical Flask -->
+      <path d="M14 0 L22 0 M18 0 L18 10 L28 26 C30 30, 27 34, 22 34 L14 34 C9 34, 6 30, 8 26 L18 10" 
+            stroke="#7C6A5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="M12 24 L24 24" stroke="#7C6A5E" stroke-width="1.5" stroke-linecap="round" />
+
+      <!-- Prohibitory Cross Line (RED-FREE, elegant soft coral slash) -->
+      <circle cx="18" cy="17" r="22" stroke="#D97A6B" stroke-width="2.5" fill="none" />
+      <line x1="3" y1="3" x2="33" y2="31" stroke="#D97A6B" stroke-width="2.5" stroke-linecap="round" />
+    </g>
+
+    <text x="65" y="112" fill="#506148" font-family="system-ui, sans-serif" font-size="9" font-weight="800" text-anchor="middle" letter-spacing="1">
+      0% TOXINS
+    </text>
+  </g>
+
+  <!-- Laurel Wreath Leaves (Left) -->
+  <g stroke="#6B7B61" stroke-width="1.8" fill="none" opacity="0.6">
+    <path d="M110 90 C100 120, 115 150, 130 170" />
+    <path d="M102 105 Q92 100, 100 95" fill="#6B7B61" />
+    <path d="M98 125 Q88 120, 96 115" fill="#6B7B61" />
+    <path d="M104 145 Q94 140, 102 135" fill="#6B7B61" />
+  </g>
+
+  <!-- Laurel Wreath Leaves (Right) -->
+  <g stroke="#6B7B61" stroke-width="1.8" fill="none" opacity="0.6">
+    <path d="M290 90 C300 120, 285 150, 270 170" />
+    <path d="M298 105 Q308 100, 300 95" fill="#6B7B61" />
+    <path d="M302 125 Q312 120, 304 115" fill="#6B7B61" />
+    <path d="M296 145 Q306 140, 298 135" fill="#6B7B61" />
+  </g>
+
+  <!-- Top Badge: Zero Harsh Chemicals -->
+  <g transform="translate(25, 25)" filter="url(#softGlow12)">
+    <rect width="140" height="30" rx="15" fill="#FFFFFF" stroke="#E3D6CC" stroke-width="1.5" />
+    <circle cx="16" cy="15" r="7" fill="#6B7B61" />
+    <path d="M13 15 L15 17 L19 13" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    <text x="75" y="19" fill="#3D4B36" font-family="system-ui, sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">
+      PURE &amp; NON-TOXIC
+    </text>
+  </g>
+
+  <!-- Chemical-Free Tags (Right) -->
+  <g transform="translate(265, 30)" filter="url(#softGlow12)">
+    <rect width="110" height="48" rx="12" fill="#FFFFFF" stroke="#E3D6CC" stroke-width="1.5" />
+    <text x="55" y="18" fill="#4B3A30" font-family="system-ui, sans-serif" font-size="8.5" font-weight="700" text-anchor="middle">
+      ✓ Chlorine-Free
+    </text>
+    <text x="55" y="30" fill="#4B3A30" font-family="system-ui, sans-serif" font-size="8.5" font-weight="700" text-anchor="middle">
+      ✓ Fragrance-Free
+    </text>
+    <text x="55" y="42" fill="#4B3A30" font-family="system-ui, sans-serif" font-size="8.5" font-weight="700" text-anchor="middle">
+      ✓ Dioxin-Free
+    </text>
+  </g>
+
+  <!-- Bottom Caption -->
+  <g transform="translate(85, 235)">
+    <rect width="230" height="26" rx="13" fill="#FFFFFF" stroke="#E5DAD0" stroke-width="1" />
+    <text x="115" y="17" fill="#5A473C" font-family="system-ui, sans-serif" font-size="9.5" font-weight="600" text-anchor="middle">
+      100% Gentle, Safe &amp; Hypoallergenic
+    </text>
+  </g>
+</svg>

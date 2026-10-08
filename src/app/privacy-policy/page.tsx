@@ -5,12 +5,12 @@ export const metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <div className="flex flex-col w-full bg-white">
-      <section className="py-24 bg-ivory text-center px-4">
-        <h1 className="text-4xl md:text-5xl font-heading font-bold text-charcoal mb-4">Privacy Policy</h1>
-        <p className="text-charcoal-light">Last updated: September 14, 2026</p>
+      <section className="py-10 sm:py-14 bg-ivory text-center px-4">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-charcoal mb-3 sm:mb-4">Privacy Policy</h1>
+        <p className="text-charcoal-light text-sm sm:text-base">Last updated: September 14, 2026</p>
       </section>
 
-      <section className="py-16">
+      <section className="py-10 sm:py-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-sage text-charcoal-light">
           <h2>Introduction</h2>
           <p>At Safezone, we respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.</p>

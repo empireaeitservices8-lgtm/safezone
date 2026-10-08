@@ -15,7 +15,7 @@ export default function CartPage() {
   }, []);
 
   if (!mounted) {
-    return <div className="min-h-screen bg-white pt-24 pb-24" />; // Hydration skeleton
+    return <div className="min-h-screen bg-white pt-10 pb-16" />; // Hydration skeleton
   }
 
   const subtotal = getCartTotal();
@@ -23,21 +23,21 @@ export default function CartPage() {
   const total = subtotal + shipping;
 
   return (
-    <div className="flex flex-col w-full min-h-screen bg-white pt-12 pb-24">
+    <div className="flex flex-col w-full min-h-screen bg-white pt-6 sm:pt-8 md:pt-10 pb-12 sm:pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <h1 className="text-4xl font-heading font-bold text-charcoal mb-12">Your Cart</h1>
+        <h1 className="text-3xl sm:text-4xl font-heading font-bold text-charcoal mb-6 sm:mb-8">Your Cart</h1>
         
         {items.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-20 text-center border border-gray-100 rounded-[32px] bg-ivory">
-            <ShoppingBag className="w-16 h-16 text-sage/40 mb-6" />
-            <h2 className="text-2xl font-heading font-bold text-charcoal mb-4">Your cart is empty</h2>
-            <p className="text-charcoal-light mb-8 max-w-sm">Looks like you haven't added any wellness products to your cart yet.</p>
-            <Link href="/shop" className="px-8 py-4 bg-charcoal text-white rounded-xl hover:bg-sage transition-colors font-medium text-lg">
+          <div className="flex flex-col items-center justify-center py-12 sm:py-16 text-center border border-gray-100 rounded-[24px] sm:rounded-[32px] bg-ivory px-4">
+            <ShoppingBag className="w-12 sm:w-16 h-12 sm:h-16 text-sage/40 mb-4 sm:mb-6" />
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-charcoal mb-3 sm:mb-4">Your cart is empty</h2>
+            <p className="text-sm sm:text-base text-charcoal-light mb-6 sm:mb-8 max-w-sm">Looks like you haven't added any wellness products to your cart yet.</p>
+            <Link href="/shop" className="px-6 sm:px-8 py-3.5 sm:py-4 bg-charcoal text-white rounded-xl hover:bg-sage transition-colors font-medium text-base sm:text-lg">
               Continue Shopping
             </Link>
           </div>
         ) : (
-          <div className="flex flex-col lg:flex-row gap-12">
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
             {/* Cart Items */}
             <div className="lg:w-2/3">
               <div className="border-b border-gray-200 pb-4 mb-6 hidden md:grid grid-cols-6 text-sm text-charcoal-light font-medium uppercase tracking-wider">
@@ -100,8 +100,8 @@ export default function CartPage() {
 
             {/* Order Summary */}
             <div className="lg:w-1/3">
-              <div className="bg-ivory rounded-[32px] p-8 border border-sage-light/30 sticky top-32">
-                <h2 className="text-2xl font-heading font-bold text-charcoal mb-6">Order Summary</h2>
+              <div className="bg-ivory rounded-[24px] sm:rounded-[32px] p-5 sm:p-6 md:p-8 border border-sage-light/30 sticky top-28 sm:top-32">
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-charcoal mb-4 sm:mb-6">Order Summary</h2>
                 
                 <div className="space-y-4 mb-6 text-charcoal-light">
                   <div className="flex justify-between">

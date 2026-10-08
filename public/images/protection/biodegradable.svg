@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none" className="w-full h-full">
+  <defs>
+    <linearGradient id="bgGrad11" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5F9F4" />
+      <stop offset="100%" stop-color="#E3EFE0" />
+    </linearGradient>
+    <linearGradient id="leafGrad11" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6EA360" />
+      <stop offset="100%" stop-color="#406E35" />
+    </linearGradient>
+    <linearGradient id="earthGrad11" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8BB97D" />
+      <stop offset="100%" stop-color="#558846" />
+    </linearGradient>
+    <filter id="softGlow11" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#2D5224" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="280" rx="24" fill="url(#bgGrad11)" />
+
+  <!-- Circular Eco-Cycle Rotation Ring -->
+  <g transform="translate(130, 45)" filter="url(#softGlow11)">
+    <!-- Big Circle Loop with Arrows -->
+    <circle cx="70" cy="70" r="65" stroke="#C4DEC0" stroke-width="3" stroke-dasharray="14 10" fill="#FFFFFF" />
+
+    <!-- Sprouting Eco Seedling from Natural Pad -->
+    <!-- Base Soil / Organic Pad Base -->
+    <path d="M40 105 C55 95, 85 95, 100 105 L95 118 C80 112, 60 112, 45 118 Z" fill="#7C6353" />
+    <path d="M45 105 C55 100, 85 100, 95 105" stroke="#9E8270" stroke-width="2" />
+
+    <!-- Sprout Stem -->
+    <path d="M70 100 C70 75, 68 55, 70 35" stroke="#406E35" stroke-width="3.5" stroke-linecap="round" fill="none" />
+
+    <!-- Left Leaf -->
+    <path d="M70 65 C45 60, 35 40, 45 30 C58 35, 68 50, 70 65 Z" fill="url(#leafGrad11)" />
+    <!-- Right Leaf -->
+    <path d="M70 50 C95 45, 105 25, 95 15 C82 20, 72 35, 70 50 Z" fill="url(#leafGrad11)" />
+
+    <!-- Eco Loop Arrows -->
+    <path d="M125 45 C135 60, 135 85, 120 105" stroke="#558846" stroke-width="2.5" stroke-linecap="round" fill="none" />
+    <path d="M125 105 L118 107 L122 98" fill="#558846" />
+
+    <path d="M15 95 C5 80, 5 55, 20 35" stroke="#558846" stroke-width="2.5" stroke-linecap="round" fill="none" />
+    <path d="M15 35 L22 33 L18 42" fill="#558846" />
+  </g>
+
+  <!-- Biodegradable 100% Eco Badge (Top Left) -->
+  <g transform="translate(25, 25)" filter="url(#softGlow11)">
+    <rect width="135" height="30" rx="15" fill="#FFFFFF" stroke="#CDE5C9" stroke-width="1.5" />
+    <circle cx="16" cy="15" r="7" fill="#558846" />
+    <path d="M13 15 L15 17 L19 13" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    <text x="73" y="19" fill="#2E5523" font-family="system-ui, sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">
+      PLASTIC-FREE
+    </text>
+  </g>
+
+  <!-- Eco Impact Badge (Right) -->
+  <g transform="translate(275, 150)" filter="url(#softGlow11)">
+    <rect width="100" height="42" rx="12" fill="#FFFFFF" stroke="#CDE5C9" stroke-width="1.5" />
+    <text x="50" y="18" fill="#2E5523" font-family="system-ui, sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">
+      EARTH FIRST
+    </text>
+    <text x="50" y="32" fill="#5A884E" font-family="system-ui, sans-serif" font-size="8" font-weight="600" text-anchor="middle">
+      Compostable
+    </text>
+  </g>
+
+  <!-- Bottom Caption -->
+  <g transform="translate(85, 235)">
+    <rect width="230" height="26" rx="13" fill="#FFFFFF" stroke="#D3E8CF" stroke-width="1" />
+    <text x="115" y="17" fill="#325927" font-family="system-ui, sans-serif" font-size="9.5" font-weight="600" text-anchor="middle">
+      Care for You • Care for Our Planet
+    </text>
+  </g>
+</svg>

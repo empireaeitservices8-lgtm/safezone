@@ -55,19 +55,19 @@ function FaqItem({ q, a }: { q: string, a: string }) {
 export default function FaqPage() {
   return (
     <div className="flex flex-col w-full bg-white">
-      <section className="py-24 bg-ivory text-center px-4">
-        <h1 className="text-4xl md:text-5xl font-heading font-bold text-charcoal mb-6">Frequently Asked Questions</h1>
-        <p className="text-lg text-charcoal-light max-w-2xl mx-auto">
+      <section className="py-10 sm:py-14 bg-ivory text-center px-4">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-charcoal mb-3 sm:mb-4">Frequently Asked Questions</h1>
+        <p className="text-base sm:text-lg text-charcoal-light max-w-2xl mx-auto">
           Find answers to common questions about our products, orders, and policies.
         </p>
       </section>
 
-      <section className="py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <section className="py-10 sm:py-14 md:py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
           {faqData.map((category) => (
             <div key={category.category}>
-              <h2 className="text-2xl font-heading font-bold text-charcoal mb-8 pb-4 border-b-2 border-sage inline-block">{category.category}</h2>
-              <div className="bg-ivory rounded-[32px] p-8 md:p-12 border border-sage-light/30">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-charcoal mb-4 sm:mb-6 pb-2 sm:pb-3 border-b-2 border-sage inline-block">{category.category}</h2>
+              <div className="bg-ivory rounded-[24px] sm:rounded-[32px] p-5 sm:p-8 md:p-10 border border-sage-light/30">
                 {category.questions.map((faq, i) => (
                   <FaqItem key={i} q={faq.q} a={faq.a} />
                 ))}

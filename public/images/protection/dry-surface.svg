@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none" className="w-full h-full">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCFAF7" />
+      <stop offset="100%" stop-color="#F2ECE4" />
+    </linearGradient>
+    <linearGradient id="adlGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4CB5AB" />
+      <stop offset="100%" stop-color="#2D8C82" />
+    </linearGradient>
+    <filter id="softGlow3" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#5A4E3E" flood-opacity="0.1" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="280" rx="24" fill="url(#bgGrad3)" />
+
+  <!-- Radiating Dryness Wave circles -->
+  <g opacity="0.12" stroke="#4CB5AB" stroke-width="2" fill="none">
+    <circle cx="200" cy="115" r="50" />
+    <circle cx="200" cy="115" r="85" />
+    <circle cx="200" cy="115" r="120" stroke-dasharray="4 6" />
+  </g>
+
+  <!-- Surface Demonstration Platform -->
+  <g transform="translate(50, 110)" filter="url(#softGlow3)">
+    <!-- Top Dry Sheet Platform -->
+    <rect x="0" y="0" width="300" height="28" rx="14" fill="#FFFFFF" stroke="#E5DED4" stroke-width="2" />
+    
+    <!-- Micro-Perforation Air Grid -->
+    <g fill="#9CA894" opacity="0.4">
+      <circle cx="30" cy="14" r="2" />
+      <circle cx="60" cy="14" r="2" />
+      <circle cx="90" cy="14" r="2" />
+      <circle cx="120" cy="14" r="2" />
+      <circle cx="150" cy="14" r="2" />
+      <circle cx="180" cy="14" r="2" />
+      <circle cx="210" cy="14" r="2" />
+      <circle cx="240" cy="14" r="2" />
+      <circle cx="270" cy="14" r="2" />
+    </g>
+
+    <!-- Top Surface DRY Indicator -->
+    <g transform="translate(100, -32)">
+      <rect width="100" height="24" rx="12" fill="#E8F6F4" stroke="#71C5BC" stroke-width="1.2" />
+      <text x="50" y="16" fill="#1C6C63" font-family="system-ui, sans-serif" font-size="10" font-weight="700" text-anchor="middle">
+        ✨ 100% DRY TOUCH
+      </text>
+    </g>
+
+    <!-- ADL Layer (Rapid Fluid Diversion System) -->
+    <rect x="25" y="42" width="250" height="20" rx="10" fill="url(#adlGrad)" />
+    <text x="150" y="56" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="10" font-weight="700" text-anchor="middle" letter-spacing="1">
+      ADL (FLUID TRANSFER LAYER)
+    </text>
+
+    <!-- Rapid Downward Diversion Arrows from Top Sheet into ADL -->
+    <g stroke="#2D8C82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M70 20 L70 38 M66 33 L70 38 L74 33" />
+      <path d="M150 20 L150 38 M146 33 L150 38 L154 33" />
+      <path d="M230 20 L230 38 M226 33 L230 38 L234 33" />
+    </g>
+
+    <!-- Fluid dispersion channels spreading moisture away from skin -->
+    <g stroke="#3BA99D" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 4" fill="none">
+      <path d="M120 52 L50 52" />
+      <path d="M180 52 L250 52" />
+    </g>
+  </g>
+
+  <!-- Hand/Feather Dry Touch Icon Top Left -->
+  <g transform="translate(30, 25)" filter="url(#softGlow3)">
+    <rect width="125" height="30" rx="15" fill="#FFFFFF" stroke="#E2DAD0" stroke-width="1.5" />
+    <circle cx="16" cy="15" r="7" fill="#4CB5AB" />
+    <path d="M13 15 L15 17 L19 13" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    <text x="70" y="19" fill="#2C3E50" font-family="system-ui, sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">
+      ZERO STICKINESS
+    </text>
+  </g>
+
+  <!-- Bottom Comfort Bar -->
+  <g transform="translate(90, 230)">
+    <rect width="220" height="26" rx="13" fill="#FFFFFF" stroke="#E0D7CC" stroke-width="1" />
+    <text x="110" y="17" fill="#5F6B58" font-family="system-ui, sans-serif" font-size="10" font-weight="600" text-anchor="middle">
+      Fluid locks inside • Surface stays silky dry
+    </text>
+  </g>
+</svg>

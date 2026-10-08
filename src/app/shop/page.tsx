@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Filter, ChevronDown, Heart, Leaf } from "lucide-react";
-import KeyFeaturesButton from "@/components/product/KeyFeaturesButton";
 
 export const metadata = {
   title: "Shop All | Safezone",
@@ -11,35 +10,35 @@ export const metadata = {
 export default function ShopPage() {
   return (
     <div className="flex flex-col w-full">
-      <section className="py-16 bg-ivory text-center px-4">
-        <h1 className="text-5xl font-heading font-bold text-charcoal mb-4">Shop Safezone</h1>
-        <p className="text-lg text-charcoal-light max-w-2xl mx-auto">
+      <section className="py-8 sm:py-12 bg-ivory text-center px-4">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-charcoal mb-2 sm:mb-3">Shop Safezone</h1>
+        <p className="text-sm sm:text-base md:text-lg text-charcoal-light max-w-2xl mx-auto">
           Explore our collection of personal hygiene and wellness products.
         </p>
       </section>
 
-      <section className="py-12 bg-white min-h-[500px]">
+      <section className="py-6 sm:py-10 bg-white min-h-[400px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="flex flex-col md:flex-row justify-between items-center mb-8 pb-4 border-b border-gray-100">
-            <div className="flex items-center gap-4 mb-4 md:mb-0">
-              <button className="flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-full text-sm font-medium hover:border-charcoal transition-colors">
-                <Filter className="w-4 h-4" />
+          <div className="flex flex-col sm:flex-row justify-between items-center mb-6 pb-3 border-b border-gray-100 gap-3">
+            <div className="flex items-center gap-3 sm:gap-4 w-full sm:w-auto justify-between sm:justify-start">
+              <button className="flex items-center gap-2 px-3.5 py-1.5 border border-gray-200 rounded-full text-xs sm:text-sm font-medium hover:border-charcoal transition-colors">
+                <Filter className="w-3.5 h-3.5" />
                 Filter
               </button>
-              <span className="text-sm text-charcoal-light">Showing 4 products</span>
+              <span className="text-xs sm:text-sm text-charcoal-light">Showing 4 products</span>
             </div>
             
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-charcoal-light">Sort by:</span>
-              <button className="flex items-center gap-1 text-sm font-medium text-charcoal">
+            <div className="flex items-center gap-2 self-end sm:self-auto">
+              <span className="text-xs sm:text-sm text-charcoal-light">Sort by:</span>
+              <button className="flex items-center gap-1 text-xs sm:text-sm font-medium text-charcoal">
                 Featured
-                <ChevronDown className="w-4 h-4" />
+                <ChevronDown className="w-3.5 h-3.5" />
               </button>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
             {/* Products Grid Placeholder */}
             {[1, 2, 3, 4].map((item) => (
               <div key={item} className="group flex flex-col bg-white rounded-[24px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
@@ -53,14 +52,16 @@ export default function ShopPage() {
                 </div>
                 <div className="p-4 md:p-6 flex flex-col flex-grow">
                   <div className="mb-1 text-[10px] md:text-xs text-charcoal-light uppercase tracking-wider">Sanitary Pads</div>
-                  <Link href={`/product/pad-${item}`} className="text-base md:text-lg font-heading font-semibold text-charcoal hover:text-sage transition-colors line-clamp-2 mb-2">
-                    Safezone Everyday Comfort Pad - Pack of 10
+                  <Link href={`/product/pad-${item}`} className="text-base md:text-lg font-heading font-semibold text-charcoal hover:text-sage transition-colors line-clamp-2 mb-1">
+                    Safezone Everyday Comfort Pad - Family Pack (40)
                   </Link>
-                  <div className="flex items-center gap-2 mb-1 pt-3">
-                    <span className="text-base md:text-lg font-bold text-charcoal">₹120</span>
-                    <span className="text-xs md:text-sm text-charcoal-light line-through">₹150</span>
+                  <p className="text-[11px] md:text-xs text-sage-dark font-medium mb-2">
+                    Sizes: XL, XXL, XXXL (40 Pads)
+                  </p>
+                  <div className="flex items-center gap-2 mb-1 pt-1">
+                    <span className="text-base md:text-lg font-bold text-charcoal">₹680</span>
+                    <span className="text-xs md:text-sm text-charcoal-light line-through">₹799</span>
                   </div>
-                  <KeyFeaturesButton />
                 </div>
               </div>
             ))}

@@ -12,9 +12,9 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ slug:
   const router = useRouter();
   const addItem = useCartStore((state) => state.addItem);
   const [quantity, setQuantity] = useState(1);
-  const [packSize, setPackSize] = useState("Pack of 10");
+  const [packSize, setPackSize] = useState("Family Pack (40 Pads)");
+  const [selectedSize, setSelectedSize] = useState("XL");
   const [added, setAdded] = useState(false);
-  const [showFeatures, setShowFeatures] = useState(false);
   
   const productImages = ["/001.png", "/003.png"];
   const [selectedImage, setSelectedImage] = useState(productImages[0]);
@@ -24,21 +24,21 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ slug:
 
   const product = {
     id: productId,
-    name: "Safezone Everyday Comfort Pad",
-    price: packSize === "Pack of 10" ? 120 : 220,
-    mrp: packSize === "Pack of 10" ? 150 : 280,
-    discount: packSize === "Pack of 10" ? "20% OFF" : "21% OFF",
+    name: "Safezone Everyday Comfort Pad - Family Pack (40)",
+    price: 680,
+    mrp: 799,
+    discount: "15% OFF",
     rating: 4.8,
     reviews: 124,
-    description: "Designed for everyday comfort and dependable protection. Our pads are made with carefully selected materials that are gentle on your skin.",
+    description: "Designed for everyday comfort and dependable protection. Made with organic bamboo materials gentle on your skin. Family Pack includes 40 premium pads with sizes available in XL, XXL, and XXXL.",
   };
 
   const handleAddToCart = () => {
     addItem({
-      id: product.id,
-      name: product.name,
+      id: `${product.id}-${selectedSize}`,
+      name: `${product.name} (Size: ${selectedSize})`,
       price: product.price,
-      packSize: packSize,
+      packSize: `${packSize} - ${selectedSize}`,
       quantity: quantity,
     });
     setAdded(true);
@@ -47,10 +47,10 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ slug:
 
   const handleBuyNow = () => {
     addItem({
-      id: product.id,
-      name: product.name,
+      id: `${product.id}-${selectedSize}`,
+      name: `${product.name} (Size: ${selectedSize})`,
       price: product.price,
-      packSize: packSize,
+      packSize: `${packSize} - ${selectedSize}`,
       quantity: quantity,
     });
     router.push("/checkout");
@@ -59,20 +59,20 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ slug:
   return (
     <div className="flex flex-col w-full bg-white">
       {/* Breadcrumbs */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full">
-        <nav className="flex items-center text-sm text-charcoal-light">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 w-full">
+        <nav className="flex items-center text-xs sm:text-sm text-charcoal-light">
           <Link href="/" className="hover:text-sage">Home</Link>
-          <ChevronRight className="w-4 h-4 mx-2" />
+          <ChevronRight className="w-3.5 h-3.5 mx-1.5 sm:mx-2" />
           <Link href="/shop" className="hover:text-sage">Shop</Link>
-          <ChevronRight className="w-4 h-4 mx-2" />
+          <ChevronRight className="w-3.5 h-3.5 mx-1.5 sm:mx-2" />
           <span className="text-charcoal font-medium truncate">{product.name}</span>
         </nav>
       </div>
 
       {/* Product Section */}
-      <section className="pb-16 w-full">
+      <section className="pb-10 sm:pb-12 md:pb-16 w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             
             {/* Image Gallery */}
             <div className="space-y-4">
@@ -101,148 +101,84 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ slug:
                 </button>
               </div>
               
-              <h1 className="text-3xl md:text-4xl font-heading font-bold text-charcoal mb-4">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-charcoal mb-2 sm:mb-3">
                 {product.name}
               </h1>
               
-              <div className="flex items-center gap-4 mb-6">
+              <div className="flex items-center gap-3 mb-3 sm:mb-4">
                 <div className="flex items-center text-[#F5C518]">
                   {[1, 2, 3, 4, 5].map((star) => (
-                    <Star key={star} className="w-5 h-5 fill-current" />
+                    <Star key={star} className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
                   ))}
                 </div>
-                <span className="text-sm text-charcoal-light underline cursor-pointer">{product.rating} ({product.reviews} reviews)</span>
+                <span className="text-xs sm:text-sm text-charcoal-light underline cursor-pointer">{product.rating} ({product.reviews} reviews)</span>
               </div>
 
               {/* Price & MRP */}
-              <div className="flex items-end gap-3 mb-3 transition-all duration-300">
-                <span className="text-3xl font-bold text-charcoal">₹{product.price}</span>
-                <span className="text-lg text-charcoal-light line-through mb-1">₹{product.mrp}</span>
-                <span className="text-sm font-bold text-green-600 bg-green-50 px-2 py-1 rounded-md mb-1">{product.discount}</span>
+              <div className="flex items-end gap-3 mb-2.5 transition-all duration-300">
+                <span className="text-2xl sm:text-3xl font-bold text-charcoal">₹{product.price}</span>
+                <span className="text-base sm:text-lg text-charcoal-light line-through mb-0.5">₹{product.mrp}</span>
+                <span className="text-xs sm:text-sm font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-md mb-0.5">{product.discount}</span>
               </div>
 
-              {/* Small "Key Features" button below existing MRP */}
-              <div className="mb-6">
-                <button
-                  type="button"
-                  id="key-features-button"
-                  onClick={() => setShowFeatures(!showFeatures)}
-                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold text-sage-dark bg-sage/10 hover:bg-sage/20 border border-sage/30 transition-all shadow-sm group cursor-pointer"
-                  aria-expanded={showFeatures}
-                  aria-controls="key-features-list"
+              {/* 12 Types of Protection Tag */}
+              <div className="mb-4">
+                <Link
+                  href="/#twelve-protections"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold text-sage-dark bg-sage/10 hover:bg-sage/20 border border-sage/30 transition-all shadow-sm group"
                 >
-                  <Sparkles className="w-3.5 h-3.5 text-sage group-hover:rotate-12 transition-transform" />
-                  <span>Key Features</span>
-                  <ChevronDown className={`w-3.5 h-3.5 text-sage transition-transform duration-200 ${showFeatures ? "rotate-180" : ""}`} />
-                </button>
-
-                {/* 12 Key Features - only displayed when clicked/opened */}
-                {showFeatures && (
-                  <div id="key-features-list" className="mt-3 p-4 sm:p-5 rounded-2xl bg-sage/5 border border-sage/20 transition-all duration-300 animate-fadeIn">
-                    <div className="flex items-center justify-between pb-3 mb-3 border-b border-sage/15">
-                      <h3 className="text-sm font-heading font-bold text-charcoal flex items-center gap-2">
-                        <span>Key Features</span>
-                      </h3>
-                      <button 
-                        type="button"
-                        onClick={() => setShowFeatures(false)}
-                        className="text-xs text-charcoal-light hover:text-charcoal px-2 py-0.5 rounded hover:bg-white/60 transition-colors cursor-pointer"
-                      >
-                        Close
-                      </button>
-                    </div>
-                    <div className="space-y-3.5 max-h-[380px] overflow-y-auto pr-2 custom-scrollbar">
-                      <div>
-                        <h4 className="font-heading font-semibold text-charcoal text-sm">1. Bamboo Fibre Fabric</h4>
-                        <p className="text-charcoal-light text-xs sm:text-sm mt-0.5 leading-relaxed">It absorbs moisture three to four times faster than normal cotton, keeping you dry and cool</p>
-                      </div>
-                      <div>
-                        <h4 className="font-heading font-semibold text-charcoal text-sm">2. High absorption</h4>
-                        <p className="text-charcoal-light text-xs sm:text-sm mt-0.5 leading-relaxed">The combination of bamboo fibre, cellulose / fluff pulp and SAPs provides fast absorption and high fluid-retention capacity</p>
-                      </div>
-                      <div>
-                        <h4 className="font-heading font-semibold text-charcoal text-sm">3. Dry Surface feel</h4>
-                        <p className="text-charcoal-light text-xs sm:text-sm mt-0.5 leading-relaxed">The ADL rapidly transfers menstrual fluid away from the cotton top sheet, helping the user feel drier</p>
-                      </div>
-                      <div>
-                        <h4 className="font-heading font-semibold text-charcoal text-sm">4. Breathable Comfort</h4>
-                        <p className="text-charcoal-light text-xs sm:text-sm mt-0.5 leading-relaxed">Bamboo / cotton materials and a breathable back sheet can improve airflow and reduce heat and moisture accumulation</p>
-                      </div>
-                      <div>
-                        <h4 className="font-heading font-semibold text-charcoal text-sm">5. Leak Protection SAP</h4>
-                        <p className="text-charcoal-light text-xs sm:text-sm mt-0.5 leading-relaxed">SAP, absorbent core construction, backsheet and four-wing design work together to reduce side and bottom leakage</p>
-                      </div>
-                      <div>
-                        <h4 className="font-heading font-semibold text-charcoal text-sm">6. Soft on Skin</h4>
-                        <p className="text-charcoal-light text-xs sm:text-sm mt-0.5 leading-relaxed">A soft cotton or bamboo-cotton top sheet can provide a smoother contact surface, particularly important for prolonged wear</p>
-                      </div>
-                      <div>
-                        <h4 className="font-heading font-semibold text-charcoal text-sm">7. Better Odour and Moisture Management</h4>
-                        <p className="text-charcoal-light text-xs sm:text-sm mt-0.5 leading-relaxed">Bamboo fibre has useful moisture-management properties, though avoid making strong antibacterial or odour-control claims unless they are supported by appropriate testing</p>
-                      </div>
-                      <div>
-                        <h4 className="font-heading font-semibold text-charcoal text-sm">8. Unbelievable Absorption</h4>
-                        <p className="text-charcoal-light text-xs sm:text-sm mt-0.5 leading-relaxed">Bio-based SAPs 12x times more absorption in heavy flow. It helps you dry, comfort and confident during long wear.</p>
-                      </div>
-                      <div>
-                        <h4 className="font-heading font-semibold text-charcoal text-sm">9. Wide Back Coverage</h4>
-                        <p className="text-charcoal-light text-xs sm:text-sm mt-0.5 leading-relaxed">Extra protection where you need it most</p>
-                      </div>
-                      <div>
-                        <h4 className="font-heading font-semibold text-charcoal text-sm">10. Side Wall Protection</h4>
-                        <p className="text-charcoal-light text-xs sm:text-sm mt-0.5 leading-relaxed">Helps prevent side leaks, a worry-free movement.</p>
-                      </div>
-                      <div>
-                        <h4 className="font-heading font-semibold text-charcoal text-sm">11. Biodegradable</h4>
-                        <p className="text-charcoal-light text-xs sm:text-sm mt-0.5 leading-relaxed">Care for you & care for nature</p>
-                      </div>
-                      <div>
-                        <h4 className="font-heading font-semibold text-charcoal text-sm">12. No Harmful Chemicals</h4>
-                        <p className="text-charcoal-light text-xs sm:text-sm mt-0.5 leading-relaxed">Free from harmful chemicals, Gentle protection for your skin & comfort</p>
-                      </div>
-                    </div>
-                  </div>
-                )}
+                  <ShieldCheck className="w-3.5 h-3.5 text-sage" />
+                  <span>Includes 12 Types of Protection • View Details</span>
+                </Link>
               </div>
 
-              <p className="text-charcoal-light leading-relaxed mb-8">
+              <p className="text-charcoal-light text-sm sm:text-base leading-relaxed mb-5 sm:mb-6">
                 {product.description}
               </p>
 
               {/* Options */}
-              <div className="space-y-6 mb-8">
+              <div className="space-y-4 sm:space-y-5 mb-5 sm:mb-6">
                 <div>
-                  <h4 className="text-sm font-semibold text-charcoal mb-3">Pack Size</h4>
-                  <div className="flex flex-wrap gap-3">
+                  <h4 className="text-xs sm:text-sm font-semibold text-charcoal mb-2">Pack Option</h4>
+                  <div className="flex flex-wrap gap-2.5">
                     <button 
-                      onClick={() => setPackSize("Pack of 10")}
-                      className={`px-6 py-3 rounded-xl font-medium transition-colors ${
-                        packSize === "Pack of 10" 
-                          ? "border-2 border-sage text-charcoal bg-sage/5" 
-                          : "border border-gray-200 text-charcoal-light hover:border-gray-300"
-                      }`}
+                      type="button"
+                      onClick={() => setPackSize("Family Pack (40 Pads)")}
+                      className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl font-medium border-2 border-sage text-charcoal bg-sage/5 transition-colors text-xs sm:text-sm"
                     >
-                      Pack of 10
+                      Family Pack (40 Pads) - ₹680
                     </button>
-                    <button 
-                      onClick={() => setPackSize("Pack of 20")}
-                      className={`px-6 py-3 rounded-xl font-medium transition-colors ${
-                        packSize === "Pack of 20" 
-                          ? "border-2 border-sage text-charcoal bg-sage/5" 
-                          : "border border-gray-200 text-charcoal-light hover:border-gray-300"
-                      }`}
-                    >
-                      Pack of 20
-                    </button>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-xs sm:text-sm font-semibold text-charcoal mb-2">
+                    Select Size: <span className="text-sage-dark font-bold">{selectedSize}</span>
+                  </h4>
+                  <div className="flex flex-wrap gap-2.5">
+                    {["XL", "XXL", "XXXL"].map((size) => (
+                      <button
+                        key={size}
+                        type="button"
+                        onClick={() => setSelectedSize(size)}
+                        className={`px-5 py-2 rounded-xl font-semibold text-xs sm:text-sm transition-all cursor-pointer ${
+                          selectedSize === size
+                            ? "border-2 border-sage text-white bg-sage shadow-sm"
+                            : "border border-gray-200 text-charcoal hover:border-sage/60 bg-white"
+                        }`}
+                      >
+                        {size}
+                      </button>
+                    ))}
                   </div>
                 </div>
                 
                 <div>
-                  <h4 className="text-sm font-semibold text-charcoal mb-3">Quantity</h4>
-                  <div className="flex items-center w-32 border border-gray-200 rounded-xl">
+                  <h4 className="text-xs sm:text-sm font-semibold text-charcoal mb-2">Quantity</h4>
+                  <div className="flex items-center w-28 sm:w-32 border border-gray-200 rounded-xl">
                     <button 
                       onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                      className="w-10 h-12 flex items-center justify-center text-charcoal hover:bg-gray-50 rounded-l-xl"
+                      className="w-9 sm:w-10 h-10 sm:h-11 flex items-center justify-center text-charcoal hover:bg-gray-50 rounded-l-xl text-base"
                     >
                       -
                     </button>
@@ -250,11 +186,11 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ slug:
                       type="text" 
                       value={quantity} 
                       readOnly 
-                      className="w-12 h-12 text-center text-charcoal font-medium border-x border-gray-200 outline-none bg-transparent" 
+                      className="w-10 sm:w-12 h-10 sm:h-11 text-center text-charcoal font-medium border-x border-gray-200 outline-none bg-transparent text-sm" 
                     />
                     <button 
                       onClick={() => setQuantity(quantity + 1)}
-                      className="w-10 h-12 flex items-center justify-center text-charcoal hover:bg-gray-50 rounded-r-xl"
+                      className="w-9 sm:w-10 h-10 sm:h-11 flex items-center justify-center text-charcoal hover:bg-gray-50 rounded-r-xl text-base"
                     >
                       +
                     </button>
@@ -262,10 +198,10 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ slug:
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 mb-10 relative">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8 relative">
                 <button 
                   onClick={handleAddToCart}
-                  className={`flex-1 py-4 rounded-xl transition-all font-medium text-lg flex items-center justify-center gap-2 ${
+                  className={`flex-1 py-3 sm:py-3.5 rounded-xl transition-all font-medium text-base sm:text-lg flex items-center justify-center gap-2 ${
                     added ? "bg-green-600 text-white" : "bg-charcoal text-white hover:bg-sage"
                   }`}
                 >
@@ -277,25 +213,25 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ slug:
                 </button>
                 <button 
                   onClick={handleBuyNow}
-                  className="flex-1 py-4 bg-sage text-white rounded-xl hover:bg-charcoal transition-colors font-medium text-lg"
+                  className="flex-1 py-3 sm:py-3.5 bg-sage text-white rounded-xl hover:bg-charcoal transition-colors font-medium text-base sm:text-lg"
                 >
                   Buy Now
                 </button>
               </div>
 
               {/* Trust badges */}
-              <div className="grid grid-cols-3 gap-4 pt-8 border-t border-gray-100">
+              <div className="grid grid-cols-3 gap-3 pt-5 sm:pt-6 border-t border-gray-100">
                 <div className="flex flex-col items-center text-center">
-                  <ShieldCheck className="w-6 h-6 text-sage mb-2" />
-                  <span className="text-xs text-charcoal-light">Secure Checkout</span>
+                  <ShieldCheck className="w-5 h-5 text-sage mb-1.5" />
+                  <span className="text-[11px] sm:text-xs text-charcoal-light">Secure Checkout</span>
                 </div>
                 <div className="flex flex-col items-center text-center">
-                  <Leaf className="w-6 h-6 text-sage mb-2" />
-                  <span className="text-xs text-charcoal-light">Quality Materials</span>
+                  <Leaf className="w-5 h-5 text-sage mb-1.5" />
+                  <span className="text-[11px] sm:text-xs text-charcoal-light">Quality Materials</span>
                 </div>
                 <div className="flex flex-col items-center text-center">
-                  <Droplets className="w-6 h-6 text-sage mb-2" />
-                  <span className="text-xs text-charcoal-light">Everyday Comfort</span>
+                  <Droplets className="w-5 h-5 text-sage mb-1.5" />
+                  <span className="text-[11px] sm:text-xs text-charcoal-light">Everyday Comfort</span>
                 </div>
               </div>
 
@@ -305,12 +241,12 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ slug:
       </section>
       
       {/* Product Details Tabs Placeholder */}
-      <section className="py-16 bg-ivory">
+      <section className="py-10 sm:py-14 bg-ivory">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-           <div className="border-b border-gray-200 mb-8 flex space-x-8 overflow-x-auto">
-             <button className="pb-4 text-charcoal font-semibold border-b-2 border-sage whitespace-nowrap">Description</button>
-             <button className="pb-4 text-charcoal-light font-medium hover:text-charcoal whitespace-nowrap">Specifications</button>
-             <button className="pb-4 text-charcoal-light font-medium hover:text-charcoal whitespace-nowrap">How to Use</button>
+           <div className="border-b border-gray-200 mb-5 sm:mb-6 flex space-x-6 sm:space-x-8 overflow-x-auto">
+             <button className="pb-3 text-sm sm:text-base text-charcoal font-semibold border-b-2 border-sage whitespace-nowrap">Description</button>
+             <button className="pb-3 text-sm sm:text-base text-charcoal-light font-medium hover:text-charcoal whitespace-nowrap">Specifications</button>
+             <button className="pb-3 text-sm sm:text-base text-charcoal-light font-medium hover:text-charcoal whitespace-nowrap">How to Use</button>
            </div>
            <div className="prose prose-sage max-w-none text-charcoal-light">
              <p>Our sanitary pads are designed with your real needs in mind. We combine thoughtful design with carefully selected materials to ensure you feel protected and comfortable every day.</p>
